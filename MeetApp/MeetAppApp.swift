@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct MeetAppApp: App {
+    
+    // MARK: Stored Properties
+
+    let onboardingManager = OnboardingManager()
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppCoordinatorView()
+                .environmentObject(AppCoordinator(onboardingManager: onboardingManager))
         }
     }
 }
