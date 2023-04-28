@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+
+class MainCoordinator: ObservableObject, Coordinator {
+    
+    func start() -> AnyView {
+        return AnyView(Text("View"))
+    }
+    
+}

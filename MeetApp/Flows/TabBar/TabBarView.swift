@@ -36,3 +36,21 @@ struct TabBarItem: View {
 //        TabBarView()
 //    }
 //}
+
+struct Item {}
+
+struct Container {
+    init(item: Item) {
+        
+    }
+    
+    var item: Item?
+    
+    func setItem(_ item: Item) {
+        
+    }
+}
+//
+//var container = Container(item: .init())
+//container.setItem(.init())
+//container.item = .init()

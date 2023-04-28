@@ -6,27 +6,28 @@
 //
 
 import SwiftUI
+import UIKit
 
-class TabBarCoordinator: ObservableObject {
+class TabBarCoordinator: ObservableObject, Coordinator {
     @Published var selectedTab: TabBarViewModel.Tab
     
-    init(selectedTab: TabBarViewModel.Tab) {
-        self.selectedTab = selectedTab
+    init() {
+        self.selectedTab = .main
     }
     
-    func start() -> some View {
+    func start() -> AnyView {
         let viewModel = TabBarViewModel()
         viewModel.selectedTab = selectedTab
         
         switch selectedTab {
         case .main:
-            return Text("Main")
-//            let coordinator = MainCoordinator()
-//            return coordinator.start()
+            let coordinator = MainCoordinator()
+            return coordinator.start()
                 .tabItem {
                     viewModel.getTabBarItem(for: .main)
                 }
                 .tag(TabBarViewModel.Tab.main)
+                .transformViewType()
 
         case .map:
             return Text("Map")
@@ -35,7 +36,7 @@ class TabBarCoordinator: ObservableObject {
                 .tabItem {
                     viewModel.getTabBarItem(for: .map)
                 }
-                .tag(TabBarViewModel.Tab.map)
+                .tag(TabBarViewModel.Tab.map) as! AnyView
 
         case .profile:
             return Text("Profile")
@@ -44,7 +45,52 @@ class TabBarCoordinator: ObservableObject {
                 .tabItem {
                     viewModel.getTabBarItem(for: .profile)
                 }
-                .tag(TabBarViewModel.Tab.profile)
+                .tag(TabBarViewModel.Tab.profile) as! AnyView
         }
     }
 }
+
+//extension TabBarCoordinator: Hashable {
+//    static func == (lhs: TabBarCoordinator, rhs: TabBarCoordinator) -> Bool {
+//        return lhs.selectedTab == rhs.selectedTab
+//    }
+//
+//    func hash(into hasher: inout Hasher) {
+//            hasher.combine(selectedTab)
+//    }
+//}
+
+extension View {
+    func transformViewType() -> AnyView {
+        return AnyView(self)
+    }
+}
+
+protocol ViewModel {}
+protocol MyView: UIViewController {}
+
+//struct Screen<View: ViewModel, ViewModel: MyView> {
+//    let view: View
+//    let model: ViewModel
+//}
+
+//protocol screenFactory {
+//    func makeTabBarScreen() ->
+//}
+
+// SOLID - Dependency Inversion
+class MyService {
+    let repo: MyRepoProtocol
+    
+    init(repo: MyRepoProtocol) {
+        self.repo = repo
+    }
+}
+
+protocol MyRepoProtocol {}
+
+class MyRepo: MyRepoProtocol {}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
