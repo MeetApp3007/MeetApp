@@ -30,22 +30,22 @@ class TabBarCoordinator: ObservableObject, Coordinator {
                 .transformViewType()
 
         case .map:
-            return Text("Map")
-//            let coordinator = MapCoordinator()
-//            return coordinator.start()
+            let coordinator = MapCoordinator()
+            return coordinator.start()
                 .tabItem {
                     viewModel.getTabBarItem(for: .map)
                 }
-                .tag(TabBarViewModel.Tab.map) as! AnyView
+                .tag(TabBarViewModel.Tab.map)
+                .transformViewType()
 
         case .profile:
-            return Text("Profile")
-//            let coordinator = ProfileCoordinator()
-//            return coordinator.start()
+            let coordinator = ProfileCoordinator()
+            return coordinator.start()
                 .tabItem {
                     viewModel.getTabBarItem(for: .profile)
                 }
-                .tag(TabBarViewModel.Tab.profile) as! AnyView
+                .tag(TabBarViewModel.Tab.profile)
+                .transformViewType()
         }
     }
 }

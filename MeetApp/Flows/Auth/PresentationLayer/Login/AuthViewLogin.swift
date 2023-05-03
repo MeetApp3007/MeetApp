@@ -1,5 +1,5 @@
 //
-//  AuthView.swift
+//  AuthViewLogin.swift
 //  MeetApp
 //
 //  Created by Николай Чунихин on 27.04.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AuthView: View {
+struct AuthViewLogin: View {
     var body: some View {
         Text("AuthView")
     }
@@ -15,6 +15,6 @@ struct AuthView: View {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView()
+        AuthViewLogin()
     }
 }

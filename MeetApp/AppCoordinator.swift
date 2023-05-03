@@ -42,7 +42,7 @@ final class AppCoordinator: ObservableObject, Coordinator {
     }
     
     private func performAuth() -> AnyView {
-        return AnyView(AuthView())
+        return AnyView(Text("Auth"))
     }
     
     private func performTabBar() -> AnyView{
