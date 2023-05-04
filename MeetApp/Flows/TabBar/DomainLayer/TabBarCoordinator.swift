@@ -8,6 +8,8 @@ import SwiftUI
 
 class TabBarCoordinator: ObservableObject, Coordinator {
     @Published var selectedTab: TabBarViewModel.Tab
+    
+    let screenFactory: TabBarScreenFactory = TabBarScreenFactory()
 
     init() {
         self.selectedTab = .main
@@ -21,8 +23,8 @@ class TabBarCoordinator: ObservableObject, Coordinator {
             get: { self.selectedTab },
             set: { self.selectedTab = $0 }
         )) {
-            MainCoordinator()
-                .start()
+            let mainScreen = screenFactory.makeMainView()
+            mainScreen
                 .tabItem {
                     viewModel.getTabBarItem(for: .main)
                 }

@@ -5,4 +5,14 @@
 //  Created by Николай Чунихин on 27.04.2023.
 //
 
-import Foundation
+import SwiftUI
+
+class OnBoardingCoordinator: ObservableObject, Coordinator {
+    
+    func start() -> AnyView {
+        return AnyView(AuthViewLogin())
+    }
+    
+}
+
+

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8D709F3F2A02EAE100085531 /* AuthViewRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F3E2A02EAE100085531 /* AuthViewRegistration.swift */; };
 		8D709F422A02EB4D00085531 /* AuthViewRegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F412A02EB4D00085531 /* AuthViewRegistrationModel.swift */; };
+		8D709F532A037ACD00085531 /* MainScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F522A037ACD00085531 /* MainScreenFactory.swift */; };
+		8D709F552A037E3E00085531 /* TabBarScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F542A037E3E00085531 /* TabBarScreenFactory.swift */; };
 		8DB1B3D129F9B725002CC2C5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3D029F9B725002CC2C5 /* AppCoordinator.swift */; };
 		8DB1B3E329F9ED59002CC2C5 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */; };
 		8DB1B3E529FA4125002CC2C5 /* AppCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3E429FA4124002CC2C5 /* AppCoordinatorView.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		8D709F3E2A02EAE100085531 /* AuthViewRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewRegistration.swift; sourceTree = "<group>"; };
 		8D709F412A02EB4D00085531 /* AuthViewRegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewRegistrationModel.swift; sourceTree = "<group>"; };
+		8D709F522A037ACD00085531 /* MainScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFactory.swift; sourceTree = "<group>"; };
+		8D709F542A037E3E00085531 /* TabBarScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarScreenFactory.swift; sourceTree = "<group>"; };
 		8DB1B3D029F9B725002CC2C5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		8DB1B3E429FA4124002CC2C5 /* AppCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorView.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB1B40929FA8936002CC2C5 /* TabBarCoordinator.swift */,
+				8D709F542A037E3E00085531 /* TabBarScreenFactory.swift */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */,
+				8D709F522A037ACD00085531 /* MainScreenFactory.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -446,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D709F552A037E3E00085531 /* TabBarScreenFactory.swift in Sources */,
 				8DB1B3E929FA44EB002CC2C5 /* AuthViewLogin.swift in Sources */,
 				8DB1B40629FA7EB4002CC2C5 /* ProfileCoordinator.swift in Sources */,
 				8DB1B3EB29FA4529002CC2C5 /* MainView.swift in Sources */,
@@ -470,6 +477,7 @@
 				8D709F422A02EB4D00085531 /* AuthViewRegistrationModel.swift in Sources */,
 				8D709F3F2A02EAE100085531 /* AuthViewRegistration.swift in Sources */,
 				8DB1B40829FA8920002CC2C5 /* TabBarViewModel.swift in Sources */,
+				8D709F532A037ACD00085531 /* MainScreenFactory.swift in Sources */,
 				8DB1B3FE29FA7E45002CC2C5 /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

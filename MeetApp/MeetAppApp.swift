@@ -10,15 +10,14 @@ import SwiftUI
 @main
 struct MeetAppApp: App {
     
-    // MARK: Stored Properties
-
+    // MARK: Services and Managers
     let onboardingManager = OnboardingManager()
-    
+    let mainScreenFactory = MainScreenFactory()
     
     var body: some Scene {
         WindowGroup {
             AppCoordinatorView()
-                .environmentObject(AppCoordinator(onboardingManager: onboardingManager))
+                .environmentObject(AppCoordinator(onboardingManager: onboardingManager, mainScreenFactory: mainScreenFactory))
         }
     }
 }
