@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct TabBarView: View {
+    
     @ObservedObject var coordinator: TabBarCoordinator
     
     var body: some View {
-        TabView(selection: $coordinator.selectedTab) {
-            coordinator.start()
-        }
+        
+//        TabView(selection: Binding<TabBarViewModel.Tab>(
+//            get: { coordinator.selectedTab },
+//            set: { coordinator.selectedTab = $0 }
+//        )) {
+//            coordinator.start()
+//        }
+        
+        coordinator.start()
     }
 }
 

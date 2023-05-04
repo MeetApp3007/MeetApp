@@ -46,9 +46,7 @@ final class AppCoordinator: ObservableObject, Coordinator {
     }
     
     private func performTabBar() -> AnyView{
-        return AnyView(
-            TabBarView(coordinator: TabBarCoordinator())
-        )
+        return AnyView(TabBarView(coordinator: TabBarCoordinator()))
     }
     
 }

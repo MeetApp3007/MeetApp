@@ -13,6 +13,7 @@ struct AppCoordinatorView: View {
         
         var body: some View {
             coordinator.start()
+            
         }
 }
 

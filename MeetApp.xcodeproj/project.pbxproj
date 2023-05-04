@@ -362,8 +362,8 @@
 				8DB1B3D229F9BA3A002CC2C5 /* Common */,
 				8DB1B3D829F9E373002CC2C5 /* Flows */,
 				8DB1B3E029F9E4CB002CC2C5 /* SubViews */,
-				8DBAEA8C29F85E7A0052442B /* Assets.xcassets */,
 				8DBAEA8E29F85E7A0052442B /* Preview Content */,
+				8DBAEA8C29F85E7A0052442B /* Assets.xcassets */,
 			);
 			path = MeetApp;
 			sourceTree = "<group>";

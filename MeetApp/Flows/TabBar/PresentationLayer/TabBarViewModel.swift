@@ -8,17 +8,39 @@
 import SwiftUI
 
 final class TabBarViewModel: ObservableObject {
-    @Published var selectedTab: Tab = .main
+    @Published var selectedTab: Tab = .map
     
     enum Tab: Int {
         case main, map, profile
+        
+        var title: String {
+            switch self {
+            case .main:
+                return "Home"
+            case .map:
+                return "Map"
+            case .profile:
+                return "Profile"
+            }
+        }
+        
+        var icon: String {
+            switch self {
+            case .main:
+                return "house"
+            case .map:
+                return "map"
+            case .profile:
+                return "person"
+            }
+        }
     }
     
     var tabBarItems: [TabBarItem] {
         [
-            TabBarItem(title: "Home", icon: "house", tab: .main),
-            TabBarItem(title: "Map", icon: "map", tab: .map),
-            TabBarItem(title: "Profile", icon: "person", tab: .profile)
+            TabBarItem(title: Tab.main.title, icon: Tab.main.icon, tab: .main),
+            TabBarItem(title: Tab.map.title, icon: Tab.map.icon, tab: .map),
+            TabBarItem(title: Tab.profile.title, icon: Tab.profile.icon, tab: .profile)
         ]
     }
     
@@ -26,3 +48,4 @@ final class TabBarViewModel: ObservableObject {
         return tabBarItems.first { $0.tab == tab }!
     }
 }
+

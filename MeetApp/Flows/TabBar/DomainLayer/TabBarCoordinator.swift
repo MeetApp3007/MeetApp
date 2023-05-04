@@ -4,61 +4,49 @@
 //
 //  Created by Николай Чунихин on 27.04.2023.
 //
-
 import SwiftUI
-import UIKit
 
 class TabBarCoordinator: ObservableObject, Coordinator {
     @Published var selectedTab: TabBarViewModel.Tab
-    
+
     init() {
         self.selectedTab = .main
     }
-    
+
     func start() -> AnyView {
         let viewModel = TabBarViewModel()
         viewModel.selectedTab = selectedTab
-        
-        switch selectedTab {
-        case .main:
-            let coordinator = MainCoordinator()
-            return coordinator.start()
+
+        return TabView(selection: Binding(
+            get: { self.selectedTab },
+            set: { self.selectedTab = $0 }
+        )) {
+            MainCoordinator()
+                .start()
                 .tabItem {
                     viewModel.getTabBarItem(for: .main)
                 }
                 .tag(TabBarViewModel.Tab.main)
-                .transformViewType()
 
-        case .map:
-            let coordinator = MapCoordinator()
-            return coordinator.start()
+            MapCoordinator()
+                .start()
                 .tabItem {
                     viewModel.getTabBarItem(for: .map)
                 }
                 .tag(TabBarViewModel.Tab.map)
-                .transformViewType()
 
-        case .profile:
-            let coordinator = ProfileCoordinator()
-            return coordinator.start()
+            ProfileCoordinator()
+                .start()
                 .tabItem {
                     viewModel.getTabBarItem(for: .profile)
                 }
                 .tag(TabBarViewModel.Tab.profile)
-                .transformViewType()
         }
+        .accentColor(.blue) // Можно установить цвет выбранного таба
+        .transformViewType()
     }
 }
 
-//extension TabBarCoordinator: Hashable {
-//    static func == (lhs: TabBarCoordinator, rhs: TabBarCoordinator) -> Bool {
-//        return lhs.selectedTab == rhs.selectedTab
-//    }
-//
-//    func hash(into hasher: inout Hasher) {
-//            hasher.combine(selectedTab)
-//    }
-//}
 
 extension View {
     func transformViewType() -> AnyView {
@@ -66,30 +54,31 @@ extension View {
     }
 }
 
-protocol ViewModel {}
-protocol MyView: UIViewController {}
-
-//struct Screen<View: ViewModel, ViewModel: MyView> {
-//    let view: View
-//    let model: ViewModel
+//
+//protocol ViewModel {}
+//protocol MyView: UIViewController {}
+//
+////struct Screen<View: ViewModel, ViewModel: MyView> {
+////    let view: View
+////    let model: ViewModel
+////}
+//
+////protocol screenFactory {
+////    func makeTabBarScreen() ->
+////}
+//
+//// SOLID - Dependency Inversion
+//class MyService {
+//    let repo: MyRepoProtocol
+//
+//    init(repo: MyRepoProtocol) {
+//        self.repo = repo
+//    }
 //}
-
-//protocol screenFactory {
-//    func makeTabBarScreen() ->
-//}
-
-// SOLID - Dependency Inversion
-class MyService {
-    let repo: MyRepoProtocol
-    
-    init(repo: MyRepoProtocol) {
-        self.repo = repo
-    }
-}
-
-protocol MyRepoProtocol {}
-
-class MyRepo: MyRepoProtocol {}
+//
+//protocol MyRepoProtocol {}
+//
+//class MyRepo: MyRepoProtocol {}
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
