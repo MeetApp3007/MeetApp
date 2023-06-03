@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @EnvironmentObject var viewModel: ProfileViewModel
+    
     var body: some View {
         Text("Profile")
     }

@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @EnvironmentObject var viewModel: OnboardingViewModel
+    
     var body: some View {
-        Text("OnboardingView")
+        VStack {
+            Spacer()
+            Text("OnBoarding")
+            Spacer()
+            Button {
+                viewModel.completeOnboarding()
+            } label: {
+                Text("Пройти онбординг")
+            }
+            Spacer()
+        }
+                
     }
+    
 }
 
 struct OnboardingView_Previews: PreviewProvider {

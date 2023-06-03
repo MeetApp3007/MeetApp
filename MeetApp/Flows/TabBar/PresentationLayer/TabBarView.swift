@@ -8,41 +8,43 @@
 import SwiftUI
 
 struct TabBarView: View {
-    
-    @ObservedObject var coordinator: TabBarCoordinator
+
+    @EnvironmentObject var viewModel: TabBarViewModel
     
     var body: some View {
-        
-//        TabView(selection: Binding<TabBarViewModel.Tab>(
-//            get: { coordinator.selectedTab },
-//            set: { coordinator.selectedTab = $0 }
-//        )) {
-//            coordinator.start()
-//        }
-        
-        coordinator.start()
+        Text("TabBar")
+            .font(.system(size: 32, weight: .heavy, design: .rounded))
     }
 }
 
-// TabBarItem.swift
-struct TabBarItem: View {
-    let title: String
-    let icon: String
-    let tab: TabBarViewModel.Tab
-    
-    var body: some View {
-        VStack {
-            Image(systemName: icon)
-            Text(title)
-        }
-    }
-}
 
-//struct TabBarView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TabBarView()
-//    }
-//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //struct Item {}
 //

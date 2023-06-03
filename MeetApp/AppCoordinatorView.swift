@@ -2,19 +2,30 @@
 //  AppCoordinatorView.swift
 //  MeetApp
 //
-//  Created by Николай Чунихин on 27.04.2023.
+//  Created by Николай Чунихин on 18.05.2023.
 //
 
 import SwiftUI
 
+
 struct AppCoordinatorView: View {
     
-    @EnvironmentObject var coordinator: AppCoordinator
-        
-        var body: some View {
-            coordinator.start()
-            
+    @EnvironmentObject var coordinator: CoordinatorObject
+    
+    var body: some View {
+        start()
+    }
+    
+    func start() -> some View {
+        NavigationStack(path: $coordinator.path) {
+            coordinator.performFlow(flow: coordinator.start())
+                .navigationDestination(for: Flow.self) { page in
+                    coordinator.performFlow(flow: coordinator.start())
+                }
+                .environmentObject(coordinator)
         }
+    }
+
 }
 
 

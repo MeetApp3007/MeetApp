@@ -7,10 +7,15 @@
 
 import SwiftUI
 
-class MapCoordinator: ObservableObject, Coordinator {
+class MapCoordinator {
     
-    func start() -> AnyView {
-        return AnyView(MapView())
+    let screenFactory: ScreenFactory
+    
+    init(screenFactory: ScreenFactory) {
+        self.screenFactory = screenFactory
     }
     
+    func start() -> some View {
+        return EmptyView()
+    }
 }

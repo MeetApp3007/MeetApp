@@ -7,7 +7,16 @@
 
 import Foundation
 
-class MainViewModel: ObservableObject {
+protocol MainViewModelProtocol{
+    var title: String { get }
+}
+
+class MainViewModel: ObservableObject {}
+
+extension MainViewModel: MainViewModelProtocol {
+    var title: String {
+        return "Главная"
+    }
     
 }
 

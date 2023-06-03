@@ -7,10 +7,15 @@
 
 import SwiftUI
 
-class ProfileCoordinator: ObservableObject, Coordinator {
+class ProfileCoordinator {
     
-    func start() -> AnyView {
-        return AnyView(ProfileView())
+    let screenFactory: ScreenFactory
+    
+    init(screenFactory: ScreenFactory) {
+        self.screenFactory = screenFactory
     }
     
+    func start() -> some View {
+        EmptyView()
+    }
 }

@@ -6,13 +6,52 @@
 //
 
 import SwiftUI
+import Combine
 
-class OnBoardingCoordinator: ObservableObject, Coordinator {
+enum OnboardingPage: String, Identifiable {
+    case onBoarding
     
-    func start() -> AnyView {
-        return AnyView(AuthViewLogin())
+    var id: String {
+        self.rawValue
+    }
+}
+
+class OnBoardingCoordinator: ObservableObject {
+    
+    @Published var path = NavigationPath()
+    
+    let isCompleted = CurrentValueSubject<Bool, Never>(false)
+    
+    var screenFactory: ScreenFactoryProtocol
+    
+    init(screenFactory: ScreenFactoryProtocol) {
+        self.screenFactory = screenFactory
     }
     
+    func push(_ page: AuthPage) {
+        path.append(page)
+    }
+    
+    func pop() {
+        path.removeLast()
+    }
+    
+    func popToRoot() {
+        path.removeLast(path.count)
+    }
+    
+    @ViewBuilder
+    func performFlow(page: OnboardingPage) -> some View {
+        switch page {
+        case .onBoarding:
+            self.screenFactory.makeOnBoarding(coordinator: self)
+        }
+    }
+    
+    func completeOnboarding() {
+        isCompleted.send(true)
+    }
 }
+
 
 

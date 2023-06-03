@@ -11,13 +11,22 @@ import SwiftUI
 struct MeetAppApp: App {
     
     // MARK: Services and Managers
-    let onboardingManager = OnboardingManager()
-    let mainScreenFactory = MainScreenFactory()
+    let onboardingManager: OnboardingManagerProtocol
+    let screenFactory: ScreenFactoryProtocol
+    let authChecker: AuthManagerProtocol
+    let coordinator: CoordinatorObject
+    
+    init() {
+        self.onboardingManager = OnboardingManager()
+        self.screenFactory = ScreenFactory()
+        self.authChecker = AuthManager.shared
+        self.coordinator = CoordinatorObject(mainScreenFactory: screenFactory, onboardingManager: onboardingManager, authChecker: authChecker)
+    }
     
     var body: some Scene {
         WindowGroup {
             AppCoordinatorView()
-                .environmentObject(AppCoordinator(onboardingManager: onboardingManager, mainScreenFactory: mainScreenFactory))
+                .environmentObject(coordinator)
         }
     }
 }

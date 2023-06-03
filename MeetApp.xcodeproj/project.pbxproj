@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D709F3F2A02EAE100085531 /* AuthViewRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F3E2A02EAE100085531 /* AuthViewRegistration.swift */; };
-		8D709F422A02EB4D00085531 /* AuthViewRegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F412A02EB4D00085531 /* AuthViewRegistrationModel.swift */; };
-		8D709F532A037ACD00085531 /* MainScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F522A037ACD00085531 /* MainScreenFactory.swift */; };
-		8D709F552A037E3E00085531 /* TabBarScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F542A037E3E00085531 /* TabBarScreenFactory.swift */; };
-		8DB1B3D129F9B725002CC2C5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3D029F9B725002CC2C5 /* AppCoordinator.swift */; };
+		8D709F532A037ACD00085531 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F522A037ACD00085531 /* ScreenFactory.swift */; };
+		8D709F592A05F80F00085531 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F582A05F80F00085531 /* AuthManager.swift */; };
+		8D709F5C2A06338C00085531 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F5B2A06338C00085531 /* View+.swift */; };
+		8D9A011A2A15E6A400D229FF /* AppCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A01192A15E6A400D229FF /* AppCoordinatorView.swift */; };
+		8D9A011C2A15E6C100D229FF /* AppCoordinatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A011B2A15E6C100D229FF /* AppCoordinatorObject.swift */; };
 		8DB1B3E329F9ED59002CC2C5 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */; };
-		8DB1B3E529FA4125002CC2C5 /* AppCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3E429FA4124002CC2C5 /* AppCoordinatorView.swift */; };
 		8DB1B3E729FA44CC002CC2C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3E629FA44CC002CC2C5 /* OnboardingView.swift */; };
-		8DB1B3E929FA44EB002CC2C5 /* AuthViewLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3E829FA44EB002CC2C5 /* AuthViewLogin.swift */; };
+		8DB1B3E929FA44EB002CC2C5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3E829FA44EB002CC2C5 /* LoginView.swift */; };
 		8DB1B3EB29FA4529002CC2C5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3EA29FA4529002CC2C5 /* MainView.swift */; };
 		8DB1B3ED29FA4533002CC2C5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3EC29FA4533002CC2C5 /* MapView.swift */; };
 		8DB1B3EF29FA453E002CC2C5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3EE29FA453E002CC2C5 /* ProfileView.swift */; };
 		8DB1B3F129FA4553002CC2C5 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F029FA4553002CC2C5 /* OnboardingViewModel.swift */; };
-		8DB1B3F329FA456C002CC2C5 /* AuthViewLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F229FA456C002CC2C5 /* AuthViewLoginModel.swift */; };
+		8DB1B3F329FA456C002CC2C5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F229FA456C002CC2C5 /* LoginViewModel.swift */; };
 		8DB1B3F529FA457B002CC2C5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F429FA457B002CC2C5 /* MainViewModel.swift */; };
 		8DB1B3F729FA4585002CC2C5 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F629FA4585002CC2C5 /* MapViewModel.swift */; };
 		8DB1B3F929FA459D002CC2C5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F829FA459D002CC2C5 /* ProfileViewModel.swift */; };
@@ -32,27 +31,30 @@
 		8DB1B40629FA7EB4002CC2C5 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40529FA7EB4002CC2C5 /* ProfileCoordinator.swift */; };
 		8DB1B40829FA8920002CC2C5 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40729FA8920002CC2C5 /* TabBarViewModel.swift */; };
 		8DB1B40A29FA8936002CC2C5 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40929FA8936002CC2C5 /* TabBarCoordinator.swift */; };
-		8DB1B40C29FAA1E4002CC2C5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40B29FAA1E4002CC2C5 /* Coordinator.swift */; };
 		8DBAEA8929F85E780052442B /* MeetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAEA8829F85E780052442B /* MeetAppApp.swift */; };
 		8DBAEA8D29F85E7A0052442B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBAEA8C29F85E7A0052442B /* Assets.xcassets */; };
 		8DBAEA9029F85E7A0052442B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBAEA8F29F85E7A0052442B /* Preview Assets.xcassets */; };
+		8DBC7F3E2A2AB5AD005C4440 /* OnboardinCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F3D2A2AB5AD005C4440 /* OnboardinCoordinatorView.swift */; };
+		8DBC7F402A2AB5CE005C4440 /* AuthCoordinatorView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F3F2A2AB5CE005C4440 /* AuthCoordinatorView .swift */; };
+		8DBC7F422A2AB621005C4440 /* TabBarCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F412A2AB621005C4440 /* TabBarCoordinatorView.swift */; };
+		8DBC7F442A2AC542005C4440 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F432A2AC542005C4440 /* RegisterView.swift */; };
+		8DBC7F472A2ACA36005C4440 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F462A2ACA36005C4440 /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8D709F3E2A02EAE100085531 /* AuthViewRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewRegistration.swift; sourceTree = "<group>"; };
-		8D709F412A02EB4D00085531 /* AuthViewRegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewRegistrationModel.swift; sourceTree = "<group>"; };
-		8D709F522A037ACD00085531 /* MainScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFactory.swift; sourceTree = "<group>"; };
-		8D709F542A037E3E00085531 /* TabBarScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarScreenFactory.swift; sourceTree = "<group>"; };
-		8DB1B3D029F9B725002CC2C5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		8D709F522A037ACD00085531 /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
+		8D709F582A05F80F00085531 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		8D709F5B2A06338C00085531 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		8D9A01192A15E6A400D229FF /* AppCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorView.swift; sourceTree = "<group>"; };
+		8D9A011B2A15E6C100D229FF /* AppCoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorObject.swift; sourceTree = "<group>"; };
 		8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
-		8DB1B3E429FA4124002CC2C5 /* AppCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorView.swift; sourceTree = "<group>"; };
 		8DB1B3E629FA44CC002CC2C5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		8DB1B3E829FA44EB002CC2C5 /* AuthViewLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewLogin.swift; sourceTree = "<group>"; };
+		8DB1B3E829FA44EB002CC2C5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8DB1B3EA29FA4529002CC2C5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8DB1B3EC29FA4533002CC2C5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8DB1B3EE29FA453E002CC2C5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8DB1B3F029FA4553002CC2C5 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		8DB1B3F229FA456C002CC2C5 /* AuthViewLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewLoginModel.swift; sourceTree = "<group>"; };
+		8DB1B3F229FA456C002CC2C5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8DB1B3F429FA457B002CC2C5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		8DB1B3F629FA4585002CC2C5 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		8DB1B3F829FA459D002CC2C5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -64,11 +66,15 @@
 		8DB1B40529FA7EB4002CC2C5 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		8DB1B40729FA8920002CC2C5 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		8DB1B40929FA8936002CC2C5 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		8DB1B40B29FAA1E4002CC2C5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8DBAEA8529F85E780052442B /* MeetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBAEA8829F85E780052442B /* MeetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetAppApp.swift; sourceTree = "<group>"; };
 		8DBAEA8C29F85E7A0052442B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DBAEA8F29F85E7A0052442B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8DBC7F3D2A2AB5AD005C4440 /* OnboardinCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardinCoordinatorView.swift; sourceTree = "<group>"; };
+		8DBC7F3F2A2AB5CE005C4440 /* AuthCoordinatorView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthCoordinatorView .swift"; sourceTree = "<group>"; };
+		8DBC7F412A2AB621005C4440 /* TabBarCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinatorView.swift; sourceTree = "<group>"; };
+		8DBC7F432A2AC542005C4440 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		8DBC7F462A2ACA36005C4440 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +100,8 @@
 		8D709F3B2A02E9F300085531 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				8D709F402A02EB0B00085531 /* Login */,
-				8D709F432A02EB5600085531 /* Registration */,
+				8DBC7F452A2AC972005C4440 /* Login */,
+				8DBC7F482A2ACA3F005C4440 /* Register */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -118,27 +124,10 @@
 			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
-		8D709F402A02EB0B00085531 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				8DB1B3E829FA44EB002CC2C5 /* AuthViewLogin.swift */,
-				8DB1B3F229FA456C002CC2C5 /* AuthViewLoginModel.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		8D709F432A02EB5600085531 /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				8D709F3E2A02EAE100085531 /* AuthViewRegistration.swift */,
-				8D709F412A02EB4D00085531 /* AuthViewRegistrationModel.swift */,
-			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
 		8D709F442A02EC1200085531 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8DBC7F3F2A2AB5CE005C4440 /* AuthCoordinatorView .swift */,
 				8DB1B3FF29FA7E5A002CC2C5 /* AuthCoordinator.swift */,
 			);
 			path = DomainLayer;
@@ -147,6 +136,7 @@
 		8D709F452A02ECC600085531 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8D709F582A05F80F00085531 /* AuthManager.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -209,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				8DB1B40929FA8936002CC2C5 /* TabBarCoordinator.swift */,
-				8D709F542A037E3E00085531 /* TabBarScreenFactory.swift */,
+				8DBC7F412A2AB621005C4440 /* TabBarCoordinatorView.swift */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
@@ -226,6 +216,7 @@
 		8D709F502A02FEB500085531 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8DBC7F3D2A2AB5AD005C4440 /* OnboardinCoordinatorView.swift */,
 				8DB1B3FD29FA7E45002CC2C5 /* OnboardingCoordinator.swift */,
 			);
 			path = DomainLayer;
@@ -234,33 +225,34 @@
 		8D709F512A02FECA00085531 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */,
 			);
 			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		8D709F5A2A06336500085531 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D709F5B2A06338C00085531 /* View+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8DB1B3D229F9BA3A002CC2C5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8D709F5A2A06336500085531 /* Extensions */,
 				8DB1B3E129F9ED22002CC2C5 /* Managers */,
-				8DB1B3D729F9DD54002CC2C5 /* Coordinator */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		8DB1B3D729F9DD54002CC2C5 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				8DB1B40B29FAA1E4002CC2C5 /* Coordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		8DB1B3D829F9E373002CC2C5 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				8DB1B3FA29FA7D64002CC2C5 /* TabBar */,
 				8DB1B3DB29F9E407002CC2C5 /* Onboarding */,
 				8DB1B3DC29F9E412002CC2C5 /* Auth */,
+				8DB1B3FA29FA7D64002CC2C5 /* TabBar */,
 				8DB1B3DD29F9E456002CC2C5 /* Main */,
 				8DB1B3DE29F9E46C002CC2C5 /* Map */,
 				8DB1B3DF29F9E47D002CC2C5 /* Profile */,
@@ -328,8 +320,7 @@
 		8DB1B3E129F9ED22002CC2C5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */,
-				8D709F522A037ACD00085531 /* MainScreenFactory.swift */,
+				8D709F522A037ACD00085531 /* ScreenFactory.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -363,8 +354,8 @@
 			isa = PBXGroup;
 			children = (
 				8DBAEA8829F85E780052442B /* MeetAppApp.swift */,
-				8DB1B3D029F9B725002CC2C5 /* AppCoordinator.swift */,
-				8DB1B3E429FA4124002CC2C5 /* AppCoordinatorView.swift */,
+				8D9A01192A15E6A400D229FF /* AppCoordinatorView.swift */,
+				8D9A011B2A15E6C100D229FF /* AppCoordinatorObject.swift */,
 				8DB1B3D229F9BA3A002CC2C5 /* Common */,
 				8DB1B3D829F9E373002CC2C5 /* Flows */,
 				8DB1B3E029F9E4CB002CC2C5 /* SubViews */,
@@ -380,6 +371,24 @@
 				8DBAEA8F29F85E7A0052442B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8DBC7F452A2AC972005C4440 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8DB1B3E829FA44EB002CC2C5 /* LoginView.swift */,
+				8DB1B3F229FA456C002CC2C5 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8DBC7F482A2ACA3F005C4440 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8DBC7F432A2AC542005C4440 /* RegisterView.swift */,
+				8DBC7F462A2ACA36005C4440 /* RegisterViewModel.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,32 +461,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D709F552A037E3E00085531 /* TabBarScreenFactory.swift in Sources */,
-				8DB1B3E929FA44EB002CC2C5 /* AuthViewLogin.swift in Sources */,
+				8DB1B3E929FA44EB002CC2C5 /* LoginView.swift in Sources */,
+				8DBC7F472A2ACA36005C4440 /* RegisterViewModel.swift in Sources */,
 				8DB1B40629FA7EB4002CC2C5 /* ProfileCoordinator.swift in Sources */,
+				8D9A011A2A15E6A400D229FF /* AppCoordinatorView.swift in Sources */,
 				8DB1B3EB29FA4529002CC2C5 /* MainView.swift in Sources */,
+				8DBC7F3E2A2AB5AD005C4440 /* OnboardinCoordinatorView.swift in Sources */,
 				8DB1B3FC29FA7D84002CC2C5 /* TabBarView.swift in Sources */,
 				8DB1B40A29FA8936002CC2C5 /* TabBarCoordinator.swift in Sources */,
 				8DB1B3EF29FA453E002CC2C5 /* ProfileView.swift in Sources */,
-				8DB1B3D129F9B725002CC2C5 /* AppCoordinator.swift in Sources */,
+				8DBC7F442A2AC542005C4440 /* RegisterView.swift in Sources */,
 				8DB1B3F529FA457B002CC2C5 /* MainViewModel.swift in Sources */,
+				8D709F5C2A06338C00085531 /* View+.swift in Sources */,
 				8DB1B3E329F9ED59002CC2C5 /* OnboardingManager.swift in Sources */,
 				8DB1B3E729FA44CC002CC2C5 /* OnboardingView.swift in Sources */,
+				8D709F592A05F80F00085531 /* AuthManager.swift in Sources */,
 				8DBAEA8929F85E780052442B /* MeetAppApp.swift in Sources */,
 				8DB1B3F929FA459D002CC2C5 /* ProfileViewModel.swift in Sources */,
-				8DB1B3F329FA456C002CC2C5 /* AuthViewLoginModel.swift in Sources */,
+				8DB1B3F329FA456C002CC2C5 /* LoginViewModel.swift in Sources */,
+				8D9A011C2A15E6C100D229FF /* AppCoordinatorObject.swift in Sources */,
+				8DBC7F422A2AB621005C4440 /* TabBarCoordinatorView.swift in Sources */,
 				8DB1B3F129FA4553002CC2C5 /* OnboardingViewModel.swift in Sources */,
 				8DB1B40429FA7EA1002CC2C5 /* MapCoordinator.swift in Sources */,
 				8DB1B3F729FA4585002CC2C5 /* MapViewModel.swift in Sources */,
 				8DB1B40229FA7E82002CC2C5 /* MainCoordinator.swift in Sources */,
-				8DB1B40C29FAA1E4002CC2C5 /* Coordinator.swift in Sources */,
 				8DB1B3ED29FA4533002CC2C5 /* MapView.swift in Sources */,
-				8DB1B3E529FA4125002CC2C5 /* AppCoordinatorView.swift in Sources */,
+				8DBC7F402A2AB5CE005C4440 /* AuthCoordinatorView .swift in Sources */,
 				8DB1B40029FA7E5A002CC2C5 /* AuthCoordinator.swift in Sources */,
-				8D709F422A02EB4D00085531 /* AuthViewRegistrationModel.swift in Sources */,
-				8D709F3F2A02EAE100085531 /* AuthViewRegistration.swift in Sources */,
 				8DB1B40829FA8920002CC2C5 /* TabBarViewModel.swift in Sources */,
-				8D709F532A037ACD00085531 /* MainScreenFactory.swift in Sources */,
+				8D709F532A037ACD00085531 /* ScreenFactory.swift in Sources */,
 				8DB1B3FE29FA7E45002CC2C5 /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

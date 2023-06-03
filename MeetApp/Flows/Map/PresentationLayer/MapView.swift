@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MapView: View {
+    
+    @EnvironmentObject var viewModel: MapViewModel
+    
     var body: some View {
         Text("Map")
     }

@@ -7,10 +7,16 @@
 
 import SwiftUI
 
-class MainCoordinator: ObservableObject, Coordinator {
+class MainCoordinator {
+    
+    let factory: ScreenFactory
+    
+    init(factory: ScreenFactory) {
+        self.factory = factory
+    }
     
     func start() -> AnyView {
-        return AnyView(MainView())
+        return AnyView(self.factory.makeMainView(coordinator: self))
     }
     
 }
