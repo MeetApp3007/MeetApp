@@ -16,16 +16,16 @@ enum OnboardingPage: String, Identifiable {
     }
 }
 
-class OnBoardingCoordinator: ObservableObject {
+class OnBoardingCoordinator: ObservableObject, Coordinator {
     
     @Published var path = NavigationPath()
     
-    let isCompleted = CurrentValueSubject<Bool, Never>(false)
-    
     var screenFactory: ScreenFactoryProtocol
+    private let manager: OnboardingManagerProtocol
     
-    init(screenFactory: ScreenFactoryProtocol) {
+    init(screenFactory: ScreenFactoryProtocol, manager: OnboardingManagerProtocol) {
         self.screenFactory = screenFactory
+        self.manager = manager
     }
     
     func push(_ page: AuthPage) {
@@ -49,7 +49,7 @@ class OnBoardingCoordinator: ObservableObject {
     }
     
     func completeOnboarding() {
-        isCompleted.send(true)
+        manager.onboardingCompleted()
     }
 }
 

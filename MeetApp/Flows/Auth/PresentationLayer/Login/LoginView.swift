@@ -13,13 +13,17 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
+            
             Spacer()
+            
             Text("Login")
                 .font(.system(size: 32, weight: .bold))
                 .foregroundColor(.pink)
+            
             Spacer()
+            
             Button {
-                viewModel.goRegister()
+                viewModel.roadToRegisterScreen()
             } label: {
                 Text("Register view")
                     .font(.system(size: 24))
@@ -34,7 +38,6 @@ struct LoginView: View {
             }
             .buttonStyle(.borderedProminent)
 
-            
             Spacer()
         }
         

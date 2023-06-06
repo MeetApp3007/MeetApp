@@ -7,19 +7,32 @@
 
 import SwiftUI
 
-class LoginViewModel: ObservableObject {
+class LoginViewModel: ObservableObject, LoginScreenOutput {
     
-    var coordinator: AuthCoordinator
+    var onLogin: () -> Void = {}
+    var roadToRegisterScreen: () -> Void = {}
+    
+//    var coordinator: AuthCoordinator
 
-    init(coordinator: AuthCoordinator) {
-        self.coordinator = coordinator
-    }
+//    init(coordinator: AuthCoordinator) {
+//        self.coordinator = coordinator
+//    }
+    
+    init() {}
     
     func login() {
-        coordinator.login()
+        onLogin()
+//        coordinator.login()
     }
     
-    func goRegister() {
-        coordinator.present(.register)
+    func goToRegister() {
+        roadToRegisterScreen()
+//        coordinator.present(.register)
     }
+}
+
+protocol LoginScreenOutput {
+    var onLogin: () -> Void { get set }
+    var roadToRegisterScreen: () -> Void { get set }
+    func goToRegister()
 }

@@ -5,7 +5,7 @@
 //  Created by Николай Чунихин on 27.04.2023.
 //
 import SwiftUI
-import Combine
+
 
 enum AuthPage: String, Identifiable {
     case login, register
@@ -15,22 +15,24 @@ enum AuthPage: String, Identifiable {
     }
 }
 
-class AuthCoordinator: ObservableObject {
+class AuthCoordinator: ObservableObject, Coordinator {
     
     @Published var path = NavigationPath()
     @Published var flow: AuthPage?
     
-    let isCompleted = CurrentValueSubject<Bool, Never>(false)
-    
+    //MARK: init properties
     var screenFactory: ScreenFactoryProtocol
+    private let authManager: AuthManagerProtocol
     
-    init(screenFactory: ScreenFactoryProtocol) {
+    init(screenFactory: ScreenFactoryProtocol, manager: AuthManagerProtocol) {
         self.screenFactory = screenFactory
+        self.authManager = manager
     }
     
     func present(_ page: AuthPage) {
         self.flow = page
     }
+
     
     func push(_ page: AuthPage) {
         path.append(page)
@@ -48,21 +50,33 @@ class AuthCoordinator: ObservableObject {
         self.flow = nil
     }
     
-    
     func performFlow(page : AuthPage) -> some View {
         switch page {
         case .login:
-            return self.screenFactory.makeAuthView(coordinator: self, type: .login)
+            
+            var (view, viewModel) = screenFactory.makeLoginView()
+            
+            viewModel.onLogin = { [weak self] in self?.login() }
+            viewModel.roadToRegisterScreen = { [weak self] in self?.present(.register) }
+            
+            return view
         case .register:
-            return self.screenFactory.makeAuthView(coordinator: self, type: .register)
+            
+            var (view, viewModel) = screenFactory.makeRegisterView()
+            
+            viewModel.onRegister = { [weak self] in self?.register() }
+            viewModel.roadToLoginScreen = { [weak self] in self?.dismiss() }
+            
+            return view
+            }
         }
-    }
+    
     
     func login() {
-        isCompleted.send(true)
+        authManager.authCompleted()
     }
     
     func register() {
-        isCompleted.send(true)
+        authManager.authCompleted()
     }
 }

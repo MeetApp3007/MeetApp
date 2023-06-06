@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AppCoordinatorView: View {
     
-    @EnvironmentObject var coordinator: CoordinatorObject
+    @EnvironmentObject var coordinator: AppCoordinatorObject
     
     var body: some View {
         start()

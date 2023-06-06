@@ -10,23 +10,23 @@ import SwiftUI
 @main
 struct MeetAppApp: App {
     
-    // MARK: Services and Managers
-    let onboardingManager: OnboardingManagerProtocol
+    // MARK: Factories
     let screenFactory: ScreenFactoryProtocol
-    let authChecker: AuthManagerProtocol
-    let coordinator: CoordinatorObject
+    let coordinatorFactory: CoordinatorFactoryProtocol
+    let managerFactory: ManagerFactoryProtocol
     
     init() {
-        self.onboardingManager = OnboardingManager()
         self.screenFactory = ScreenFactory()
-        self.authChecker = AuthManager.shared
-        self.coordinator = CoordinatorObject(mainScreenFactory: screenFactory, onboardingManager: onboardingManager, authChecker: authChecker)
+        self.coordinatorFactory = CoordinatorFactory()
+        self.managerFactory = ManagerFactory()
+        
     }
     
     var body: some Scene {
         WindowGroup {
-            AppCoordinatorView()
-                .environmentObject(coordinator)
+            coordinatorFactory.makeAppCoordinator(screenFactory: screenFactory,
+                                                  coordinatorFactory: coordinatorFactory,
+                                                  managerFactory: managerFactory)
         }
     }
 }

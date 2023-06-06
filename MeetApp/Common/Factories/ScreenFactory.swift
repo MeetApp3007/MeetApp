@@ -11,7 +11,9 @@ protocol ScreenFactoryProtocol {
     @ViewBuilder
     func makeOnBoarding(coordinator: OnBoardingCoordinator) -> AnyView
     @ViewBuilder
-    func makeAuthView(coordinator: AuthCoordinator, type: AuthPage) -> AnyView
+    func makeRegisterView() -> (AnyView, RegisterScreenOutput)
+    @ViewBuilder
+    func makeLoginView() -> (AnyView, LoginScreenOutput)
     @ViewBuilder
     func makeTabBarView(coordinator: TabBarCoordinator) ->  AnyView
     @ViewBuilder
@@ -27,6 +29,18 @@ final class ScreenFactory {}
 
 
 extension ScreenFactory: ScreenFactoryProtocol {
+    
+    func makeRegisterView() -> (AnyView, RegisterScreenOutput) {
+        let viewModel = RegisterViewModel()
+        let view = RegisterView().environmentObject(viewModel)
+        return (AnyView(view), viewModel)
+    }
+    
+    func makeLoginView() -> (AnyView, LoginScreenOutput) {
+        let viewModel = LoginViewModel()
+        let view = LoginView().environmentObject(viewModel)
+        return (AnyView(view), viewModel)
+    }
    
     /// Создание сцен
     @ViewBuilder
@@ -37,19 +51,7 @@ extension ScreenFactory: ScreenFactoryProtocol {
     }
 
     
-    func makeAuthView(coordinator: AuthCoordinator, type: AuthPage) ->  AnyView {
-        switch type {
-        case .login:
-            let viewModel = LoginViewModel(coordinator: coordinator)
-            let view = LoginView().environmentObject(viewModel)
-            return AnyView(view)
-        case .register:
-            let viewModel = RegisterViewModel(coordinator: coordinator)
-            let view = RegisterView().environmentObject(viewModel)
-            return AnyView(view)
-            
-        }
-    }
+
     
     @ViewBuilder
     func makeTabBarView(coordinator: TabBarCoordinator) ->  AnyView {

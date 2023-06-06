@@ -13,14 +13,31 @@ struct RegisterView: View {
     
     var body: some View {
         VStack {
+            
             Spacer()
+            
             Text("Register")
+                .font(.system(size: 32, weight: .bold))
+                .foregroundColor(.pink)
+            
             Spacer()
+            
             Button {
-                viewModel.goLogin()
+                viewModel.roadToLoginScreen()
             } label: {
-                Text("Login")
+                Text("Login View")
+                    .font(.system(size: 24))
             }
+            .buttonStyle(.bordered)
+            
+            Button {
+                viewModel.register()
+            } label: {
+                Text("Зарегистрироваться")
+                    .font(.system(size: 24))
+            }
+            .buttonStyle(.borderedProminent)
+            
             Spacer()
         }
     }

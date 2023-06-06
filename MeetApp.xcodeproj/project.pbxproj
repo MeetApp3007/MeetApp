@@ -39,6 +39,9 @@
 		8DBC7F422A2AB621005C4440 /* TabBarCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F412A2AB621005C4440 /* TabBarCoordinatorView.swift */; };
 		8DBC7F442A2AC542005C4440 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F432A2AC542005C4440 /* RegisterView.swift */; };
 		8DBC7F472A2ACA36005C4440 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F462A2ACA36005C4440 /* RegisterViewModel.swift */; };
+		8DBC7F4A2A2CA857005C4440 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F492A2CA857005C4440 /* CoordinatorFactory.swift */; };
+		8DBC7F4C2A2CE0FF005C4440 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F4B2A2CE0FF005C4440 /* Coordinator.swift */; };
+		8DBC7F4E2A2CEA20005C4440 /* ManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F4D2A2CEA20005C4440 /* ManagerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +78,9 @@
 		8DBC7F412A2AB621005C4440 /* TabBarCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinatorView.swift; sourceTree = "<group>"; };
 		8DBC7F432A2AC542005C4440 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8DBC7F462A2ACA36005C4440 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		8DBC7F492A2CA857005C4440 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		8DBC7F4B2A2CE0FF005C4440 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8DBC7F4D2A2CEA20005C4440 /* ManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,8 +247,9 @@
 		8DB1B3D229F9BA3A002CC2C5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8DBC7F4B2A2CE0FF005C4440 /* Coordinator.swift */,
 				8D709F5A2A06336500085531 /* Extensions */,
-				8DB1B3E129F9ED22002CC2C5 /* Managers */,
+				8DB1B3E129F9ED22002CC2C5 /* Factories */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -317,12 +324,14 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
-		8DB1B3E129F9ED22002CC2C5 /* Managers */ = {
+		8DB1B3E129F9ED22002CC2C5 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
 				8D709F522A037ACD00085531 /* ScreenFactory.swift */,
+				8DBC7F492A2CA857005C4440 /* CoordinatorFactory.swift */,
+				8DBC7F4D2A2CEA20005C4440 /* ManagerFactory.swift */,
 			);
-			path = Managers;
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		8DB1B3FA29FA7D64002CC2C5 /* TabBar */ = {
@@ -477,6 +486,7 @@
 				8DB1B3E729FA44CC002CC2C5 /* OnboardingView.swift in Sources */,
 				8D709F592A05F80F00085531 /* AuthManager.swift in Sources */,
 				8DBAEA8929F85E780052442B /* MeetAppApp.swift in Sources */,
+				8DBC7F4C2A2CE0FF005C4440 /* Coordinator.swift in Sources */,
 				8DB1B3F929FA459D002CC2C5 /* ProfileViewModel.swift in Sources */,
 				8DB1B3F329FA456C002CC2C5 /* LoginViewModel.swift in Sources */,
 				8D9A011C2A15E6C100D229FF /* AppCoordinatorObject.swift in Sources */,
@@ -489,8 +499,10 @@
 				8DBC7F402A2AB5CE005C4440 /* AuthCoordinatorView .swift in Sources */,
 				8DB1B40029FA7E5A002CC2C5 /* AuthCoordinator.swift in Sources */,
 				8DB1B40829FA8920002CC2C5 /* TabBarViewModel.swift in Sources */,
+				8DBC7F4E2A2CEA20005C4440 /* ManagerFactory.swift in Sources */,
 				8D709F532A037ACD00085531 /* ScreenFactory.swift in Sources */,
 				8DB1B3FE29FA7E45002CC2C5 /* OnboardingCoordinator.swift in Sources */,
+				8DBC7F4A2A2CA857005C4440 /* CoordinatorFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

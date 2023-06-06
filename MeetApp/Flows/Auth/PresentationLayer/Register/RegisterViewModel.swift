@@ -7,14 +7,24 @@
 
 import Foundation
 
-class RegisterViewModel: ObservableObject {
-    var coordinator: AuthCoordinator
-
-    init(coordinator: AuthCoordinator) {
-        self.coordinator = coordinator
+class RegisterViewModel: ObservableObject, RegisterScreenOutput {
+    var onRegister: () -> Void = {}
+    
+    var roadToLoginScreen: () -> Void = {}
+    
+    init() {}
+    
+    func register() {
+        onRegister()
     }
     
-    func goLogin() {
-        coordinator.dismiss()
+    func goToLogin() {
+        roadToLoginScreen()
     }
+}
+
+protocol RegisterScreenOutput {
+    var onRegister: () -> Void { get set }
+    var roadToLoginScreen: () -> Void { get set }
+    func goToLogin()
 }

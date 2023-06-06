@@ -27,6 +27,7 @@ struct AuthCoordinatorView: View {
                 }
             
         }
+        
     }
     
 }

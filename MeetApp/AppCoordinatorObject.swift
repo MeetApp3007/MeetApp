@@ -16,26 +16,27 @@ enum Flow: String, Identifiable {
     }
 }
 
-class CoordinatorObject: ObservableObject {
+class AppCoordinatorObject: ObservableObject, Coordinator {
     
     @Published var path = NavigationPath()
     //@Published var flow: Flow?
     
+    // кто убил? //MARK: Managers
     private var onboardingManager: OnboardingManagerProtocol
+    private var authManager: AuthManagerProtocol
+    
+    //MARK: Factories
     private var screenFactory: ScreenFactoryProtocol
-    private var authChecker: AuthManagerProtocol
-    
-    private var authCoordinator: AuthCoordinator?
-    private var onBoardingCoordinator: OnBoardingCoordinator?
-    private var tabBabrCoordinator: TabBarCoordinator?
-    
+    private var coordinatorFactory: CoordinatorFactoryProtocol
+        
     private var cancellables = Set<AnyCancellable>()
     
     //MARK: - Init
-    init(mainScreenFactory: ScreenFactoryProtocol, onboardingManager: OnboardingManagerProtocol, authChecker: AuthManagerProtocol) {
-        self.screenFactory = mainScreenFactory
-        self.onboardingManager = onboardingManager
-        self.authChecker = authChecker
+    init(screenFactory: ScreenFactoryProtocol, coordinatorFactory: CoordinatorFactoryProtocol, managerFactory: ManagerFactoryProtocol) {
+        self.screenFactory = screenFactory
+        self.coordinatorFactory = coordinatorFactory
+        self.authManager = managerFactory.makeAuthManager()
+        self.onboardingManager = managerFactory.makeOnboardingManager()
     }
     
     func push(_ page: Flow) {
@@ -51,12 +52,12 @@ class CoordinatorObject: ObservableObject {
     }
     
     func start() -> Flow {
-        if onboardingManager.checkOnboarding() && authChecker.isUserRegistered() {
+        if onboardingManager.checkOnboarding() && authManager.isUserRegistered() {
             return performTabBar()
         } else if onboardingManager.checkOnboarding() {
             return performAuth()
         } else {
-            return performOboarding()
+            return performOnboarding()
         }
     }
     
@@ -66,21 +67,19 @@ class CoordinatorObject: ObservableObject {
         
         switch flow {
         case .onboarding:
-            OnboardinCoordinatorView()
-                .environmentObject(self.onBoardingCoordinator!)
+            self.coordinatorFactory.makeOnboardingCoordinator(factory: self.screenFactory,
+                                                              manager: self.onboardingManager)
         case .auth:
-            AuthCoordinatorView()
-                .environmentObject(self.authCoordinator!)
+            self.coordinatorFactory.makeAuthCoordinator(factory: self.screenFactory,
+                                                        manager: self.authManager)
         case .tabBar:
-            TabBarView()
-                .environmentObject(self.tabBabrCoordinator!)
+            self.coordinatorFactory.makeTabBarCoordinator(factory: screenFactory)
         }
     }
     
-    func performOboarding() -> Flow {
-        self.onBoardingCoordinator = OnBoardingCoordinator(screenFactory: self.screenFactory)
-        self.onboardingManager.setOnboardingCompleted()
-        self.onBoardingCoordinator?.isCompleted
+    
+    func performOnboarding() -> Flow {
+        self.onboardingManager.isCompleted
             .sink { [weak self] isCompleted in
                 if isCompleted {
                     self?.popToRoot()
@@ -90,21 +89,23 @@ class CoordinatorObject: ObservableObject {
         return .onboarding
     }
     
+    
     func performAuth() -> Flow {
-        self.authCoordinator = AuthCoordinator(screenFactory: self.screenFactory)
-        self.authChecker.logInUser()
-        self.authCoordinator?.isCompleted
+        
+        self.authManager.isCompleted
             .sink { [weak self] isCompleted in
                 if isCompleted {
                     self?.popToRoot()
                 }
             }
             .store(in: &cancellables)
+        
         return .auth
     }
     
+    
     func performTabBar() -> Flow {
-        self.tabBabrCoordinator = TabBarCoordinator(screenFactory: self.screenFactory)
+        
         return .tabBar
     }
 }

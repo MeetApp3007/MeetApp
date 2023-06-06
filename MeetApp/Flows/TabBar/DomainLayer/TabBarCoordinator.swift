@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-class TabBarCoordinator: ObservableObject {
+class TabBarCoordinator: ObservableObject, Coordinator {
     
     var screenFactory: ScreenFactoryProtocol
     

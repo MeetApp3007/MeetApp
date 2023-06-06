@@ -6,23 +6,39 @@
 //
 
 import Foundation
+import Combine
 
-protocol AuthManagerProtocol {
+protocol AuthManagerProtocol: AuthManagerUD, AuthCombine {}
+
+protocol AuthManagerUD {
+    
     func isUserRegistered() -> Bool
     func logInUser()
     func logOutUser()
+    func authCompleted()
 }
 
+protocol AuthCombine {
+    var isCompleted: CurrentValueSubject<Bool, Never> { get set }
+}
+
+
 /// Менеджер авторизации
-final class AuthManager : AuthManagerProtocol {
-    
-    // MARK: - Properties
-    /// Singleton
-    static let shared = AuthManager()
-    
+final class AuthManager: AuthCombine {
+    var isCompleted = CurrentValueSubject<Bool, Never>(false)
+   
     private let userDefaults = UserDefaults.standard
-    
+}
+
+///
+extension AuthManager : AuthManagerUD {
     // MARK: - Public methods
+    
+    
+    func authCompleted() {
+        logInUser()
+        isCompleted.send(true)
+    }
     /// Проверка авторизации пользователя
     func isUserRegistered() -> Bool {
         return userDefaults.bool(forKey: "isUserRegistered")
@@ -36,8 +52,7 @@ final class AuthManager : AuthManagerProtocol {
         userDefaults.set(false, forKey: "isUserRegistered")
     }
     
-    // MARK: - Private init
-    /// Конструктор
-    private init() {}
 }
+
+extension AuthManager: AuthManagerProtocol {}
 
