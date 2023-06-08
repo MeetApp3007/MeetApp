@@ -6,7 +6,21 @@
 //
 
 import Foundation
+/// Интерфейс вывода онбординга
+protocol OnboardingScreenOutput {
+    var onboardingComplete: () -> Void { get set }
+}
 
-class OnboardingViewModel: ObservableObject {
+final class OnboardingViewModel: ObservableObject, OnboardingScreenOutput {
+    // MARK: Properties
+    var onboardingComplete: () -> Void = {}
     
+    // MARK: Init
+    init() {}
+    
+    // MARK: Methods
+    /// Прохождение онбординга
+    func completeOnboarding() {
+        onboardingComplete()
+    }
 }

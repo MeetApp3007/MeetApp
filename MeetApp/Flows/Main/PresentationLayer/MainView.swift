@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
+    // MARK: Properties
+    /// вьюМодель
+    @EnvironmentObject var viewModel: MainViewModel
     
-    
-    
+    // MARK: Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Main View")
+            .font(.system(size: 24, weight: .semibold, design: .rounded))
     }
 }
 

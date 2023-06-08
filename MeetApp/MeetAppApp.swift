@@ -10,15 +10,27 @@ import SwiftUI
 @main
 struct MeetAppApp: App {
     
-    // MARK: Stored Properties
-
-    let onboardingManager = OnboardingManager()
+    // MARK: Properties
+    ///Фабрики
+    let screenFactory: ScreenFactoryProtocol
+    let coordinatorFactory: CoordinatorFactoryProtocol
+    let managerFactory: ManagerFactoryProtocol
     
+    // MARK: Init
+    init() {
+        self.screenFactory = ScreenFactory()
+        self.coordinatorFactory = CoordinatorFactory()
+        self.managerFactory = ManagerFactory()
+        
+    }
     
+    // MARK: Body
     var body: some Scene {
         WindowGroup {
-            AppCoordinatorView()
-                .environmentObject(AppCoordinator(onboardingManager: onboardingManager))
+            ///Запуск координатора приложения
+            coordinatorFactory.makeAppCoordinator(screenFactory: screenFactory,
+                                                  coordinatorFactory: coordinatorFactory,
+                                                  managerFactory: managerFactory)
         }
     }
 }

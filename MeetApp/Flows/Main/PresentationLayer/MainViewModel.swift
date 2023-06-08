@@ -6,8 +6,19 @@
 //
 
 import Foundation
-
-class MainViewModel: ObservableObject {
+/// Интерфейс вывода главного экрана
+protocol MainScreenOutput{
     
 }
+
+final class MainViewModel: ObservableObject, MainScreenOutput {
+    // MARK: Properties
+    
+    // MARK: Init
+    init() {}
+    
+    // MARK: Methods
+}
+
+
 

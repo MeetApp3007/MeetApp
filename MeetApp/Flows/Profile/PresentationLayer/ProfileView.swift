@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ProfileView: View {
+    // MARK: Properties
+    /// вьюМодель
+    @EnvironmentObject var viewModel: ProfileViewModel
+    
+    // MARK: Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Profile View")
+            .font(.system(size: 24, weight: .semibold, design: .rounded))
     }
 }
 

@@ -8,9 +8,33 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    // MARK: Properties
+    /// вьюМодель
+    @EnvironmentObject var viewModel: OnboardingViewModel
+        
+    // MARK: Body
     var body: some View {
-        Text("OnboardingView")
+        VStack {
+            
+            Spacer()
+            
+            Text("OnBoarding")
+                .font(.system(size: 32, weight: .heavy, design: .rounded))
+                .foregroundColor(.green)
+            Spacer()
+            
+            Button {
+                viewModel.completeOnboarding()
+            } label: {
+                Text("Пройти онбординг")
+                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+            }
+            .buttonStyle(.borderedProminent)
+            Spacer()
+        }
+                
     }
+    
 }
 
 struct OnboardingView_Previews: PreviewProvider {
