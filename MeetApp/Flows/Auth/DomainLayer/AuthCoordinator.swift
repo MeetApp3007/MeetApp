@@ -6,7 +6,8 @@
 //
 import SwiftUI
 
-
+// MARK: Flows
+/// Флоу координатора авторизации
 enum AuthPage: String, Identifiable {
     case login, register
     
@@ -15,25 +16,29 @@ enum AuthPage: String, Identifiable {
     }
 }
 
-class AuthCoordinator: ObservableObject, Coordinator {
-    
+final class AuthCoordinator: ObservableObject, Coordinator {
+    // MARK: Properties
+    ///навигация
     @Published var path = NavigationPath()
     @Published var flow: AuthPage?
-    
-    //MARK: init properties
-    var screenFactory: ScreenFactoryProtocol
+    /// менеджер
     private let authManager: AuthManagerProtocol
+    /// фабрика
+    private var screenFactory: ScreenFactoryProtocol
     
-    init(screenFactory: ScreenFactoryProtocol, manager: AuthManagerProtocol) {
+    
+    //MARK: Init
+    init(screenFactory: ScreenFactoryProtocol, authManager: AuthManagerProtocol) {
         self.screenFactory = screenFactory
-        self.authManager = manager
+        self.authManager = authManager
     }
     
+    // MARK: Methods
+    ///Методы навигации
     func present(_ page: AuthPage) {
         self.flow = page
     }
 
-    
     func push(_ page: AuthPage) {
         path.append(page)
     }
@@ -50,8 +55,11 @@ class AuthCoordinator: ObservableObject, Coordinator {
         self.flow = nil
     }
     
-    func performFlow(page : AuthPage) -> some View {
-        switch page {
+    /// Запуск Флоу
+    /// - Parameters:
+    ///     - flow: Представление
+    func performFlow(flow: AuthPage) -> some View {
+        switch flow {
         case .login:
             
             var (view, viewModel) = screenFactory.makeLoginView()
@@ -69,13 +77,13 @@ class AuthCoordinator: ObservableObject, Coordinator {
             
             return view
             }
-        }
+    }
     
-    
+    /// Выполнение авторизации
     func login() {
         authManager.authCompleted()
     }
-    
+    /// Выполнение регистрации
     func register() {
         authManager.authCompleted()
     }

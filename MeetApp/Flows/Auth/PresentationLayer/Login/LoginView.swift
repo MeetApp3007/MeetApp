@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct LoginView: View {
-    
+    // MARK: Properties
+    /// вьюМодель
     @EnvironmentObject var viewModel: LoginViewModel
     
+    // MARK: Body
     var body: some View {
         VStack {
             

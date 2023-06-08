@@ -7,15 +7,60 @@
 
 import SwiftUI
 
-class ProfileCoordinator {
+// MARK: Flows
+/// Флоу координатора онбординга
+enum ProfilePage: String, Identifiable {
+    case profile
     
-    let screenFactory: ScreenFactory
+    var id: String {
+        self.rawValue
+    }
+}
+
+final class ProfileCoordinator: ObservableObject, Coordinator {
+    // MARK: Properties
+    ///навигация
+    @Published var path = NavigationPath()
+    @Published var flow: ProfilePage?
+    /// фабрика
+    let screenFactory: ScreenFactoryProtocol
     
-    init(screenFactory: ScreenFactory) {
+    // MARK: Init
+    init(screenFactory: ScreenFactoryProtocol) {
         self.screenFactory = screenFactory
     }
     
-    func start() -> some View {
-        EmptyView()
+    // MARK: Methods
+    ///Методы навигации
+    func present(_ page: ProfilePage) {
+        self.flow = page
     }
+    
+    func push(_ page: ProfilePage) {
+        path.append(page)
+    }
+    
+    func pop() {
+        path.removeLast()
+    }
+    
+    func popToRoot() {
+        path.removeLast(path.count)
+    }
+    
+    func dismiss() {
+        self.flow = nil
+    }
+    /// Запуск Флоу
+    /// - Parameters:
+    ///    - flow: Представление
+    func performFlow(page: ProfilePage) -> some View {
+        switch page {
+        case .profile:
+            let (view, viewModel) = screenFactory.makeProfileView()
+            
+            return view
+        }
+    }
+    
 }

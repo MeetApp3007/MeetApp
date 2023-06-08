@@ -7,17 +7,20 @@
 
 import SwiftUI
 
-struct OnboardinCoordinatorView: View {
-    
+struct OnboardinCoordinatorView: View, CoordinatorView {
+    // MARK: Properties
+    /// Подписка на координатор
     @EnvironmentObject var coordinator: OnBoardingCoordinator
     
+    // MARK: Body
     var body: some View {
         start()
     }
-    
+    // MARK: Methods
+    /// Запуск координатора
     func start() -> some View {
         NavigationStack(path: $coordinator.path) {
-            coordinator.performFlow(page: .onBoarding)
+            coordinator.performFlow(flow: .onBoarding)
         }
     }
 }

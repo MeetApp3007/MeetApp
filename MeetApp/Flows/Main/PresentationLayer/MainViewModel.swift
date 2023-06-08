@@ -6,17 +6,19 @@
 //
 
 import Foundation
-
-protocol MainViewModelProtocol{
-    var title: String { get }
-}
-
-class MainViewModel: ObservableObject {}
-
-extension MainViewModel: MainViewModelProtocol {
-    var title: String {
-        return "Главная"
-    }
+/// Интерфейс вывода главного экрана
+protocol MainScreenOutput{
     
 }
+
+final class MainViewModel: ObservableObject, MainScreenOutput {
+    // MARK: Properties
+    
+    // MARK: Init
+    init() {}
+    
+    // MARK: Methods
+}
+
+
 

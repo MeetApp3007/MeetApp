@@ -5,18 +5,22 @@
 //  Created by Николай Чунихин on 27.04.2023.
 //
 
-import SwiftUI
+import Foundation
+/// Интерфейс вывода онбординга
+protocol OnboardingScreenOutput {
+    var onboardingComplete: () -> Void { get set }
+}
 
-
-class OnboardingViewModel: ObservableObject {
-    private let coordinator: OnBoardingCoordinator
+final class OnboardingViewModel: ObservableObject, OnboardingScreenOutput {
+    // MARK: Properties
+    var onboardingComplete: () -> Void = {}
     
+    // MARK: Init
+    init() {}
     
-    init(coordinator: OnBoardingCoordinator) {
-        self.coordinator = coordinator
-    }
-    
+    // MARK: Methods
+    /// Прохождение онбординга
     func completeOnboarding() {
-        coordinator.completeOnboarding()
+        onboardingComplete()
     }
 }

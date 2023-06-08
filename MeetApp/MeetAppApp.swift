@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct MeetAppApp: App {
     
-    // MARK: Factories
+    // MARK: Properties
+    ///Фабрики
     let screenFactory: ScreenFactoryProtocol
     let coordinatorFactory: CoordinatorFactoryProtocol
     let managerFactory: ManagerFactoryProtocol
     
+    // MARK: Init
     init() {
         self.screenFactory = ScreenFactory()
         self.coordinatorFactory = CoordinatorFactory()
@@ -22,8 +24,10 @@ struct MeetAppApp: App {
         
     }
     
+    // MARK: Body
     var body: some Scene {
         WindowGroup {
+            ///Запуск координатора приложения
             coordinatorFactory.makeAppCoordinator(screenFactory: screenFactory,
                                                   coordinatorFactory: coordinatorFactory,
                                                   managerFactory: managerFactory)

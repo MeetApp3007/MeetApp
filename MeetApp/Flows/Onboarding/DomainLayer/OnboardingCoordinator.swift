@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
-import Combine
 
+// MARK: Flows
+/// Флоу координатора онбординга
 enum OnboardingPage: String, Identifiable {
     case onBoarding
     
@@ -16,18 +17,23 @@ enum OnboardingPage: String, Identifiable {
     }
 }
 
-class OnBoardingCoordinator: ObservableObject, Coordinator {
-    
+final class OnBoardingCoordinator: ObservableObject, Coordinator {
+    // MARK: Properties
+    ///навигация
     @Published var path = NavigationPath()
+    /// менеджер
+    private let onboardingManager: OnboardingManagerProtocol
+    /// фабрика
+    private let screenFactory: ScreenFactoryProtocol
     
-    var screenFactory: ScreenFactoryProtocol
-    private let manager: OnboardingManagerProtocol
-    
-    init(screenFactory: ScreenFactoryProtocol, manager: OnboardingManagerProtocol) {
+    // MARK: Init
+    init(screenFactory: ScreenFactoryProtocol, onboardingManager: OnboardingManagerProtocol) {
         self.screenFactory = screenFactory
-        self.manager = manager
+        self.onboardingManager = onboardingManager
     }
     
+    // MARK: Methods
+    ///Методы навигации
     func push(_ page: AuthPage) {
         path.append(page)
     }
@@ -39,17 +45,23 @@ class OnBoardingCoordinator: ObservableObject, Coordinator {
     func popToRoot() {
         path.removeLast(path.count)
     }
-    
-    @ViewBuilder
-    func performFlow(page: OnboardingPage) -> some View {
-        switch page {
+    /// Запуск Флоу
+    /// - Parameters:
+    ///    - flow: Представление
+    func performFlow(flow: OnboardingPage) -> some View {
+        switch flow {
         case .onBoarding:
-            self.screenFactory.makeOnBoarding(coordinator: self)
+            
+            var (view, viewModel) = screenFactory.makeOnBoarding()
+            
+            viewModel.onboardingComplete = { [weak self] in self?.completeOnboarding()}
+            
+            return view
         }
     }
-    
+    /// Выполнение онбординга
     func completeOnboarding() {
-        manager.onboardingCompleted()
+        onboardingManager.onboardingCompleted()
     }
 }
 

@@ -6,7 +6,16 @@
 //
 
 import Foundation
-
-class ProfileViewModel: ObservableObject {
+/// Интерфейс вывода экрана профиля
+protocol ProfileScreenOutput {
     
+}
+
+final class ProfileViewModel: ObservableObject, ProfileScreenOutput {
+    // MARK: Properties
+    
+    // MARK: Init
+    init() {}
+    
+    // MARK: Methods
 }

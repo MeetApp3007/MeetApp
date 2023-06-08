@@ -8,14 +8,18 @@
 import SwiftUI
 
 
-struct AppCoordinatorView: View {
+struct AppCoordinatorView: View, CoordinatorView {
     
+    // MARK: Properties
+    /// Подписка на координатор
     @EnvironmentObject var coordinator: AppCoordinatorObject
     
+    // MARK: Body
     var body: some View {
         start()
     }
-    
+    // MARK: Methods
+    /// Запуск координатора
     func start() -> some View {
         NavigationStack(path: $coordinator.path) {
             coordinator.performFlow(flow: coordinator.start())
@@ -25,7 +29,17 @@ struct AppCoordinatorView: View {
                 .environmentObject(coordinator)
         }
     }
-
 }
 
-
+struct AppCoordinatorView__Previews: PreviewProvider {
+    static var previews: some View {
+        AppCoordinatorView()
+            .environmentObject(
+                AppCoordinatorObject(
+                    screenFactory: ScreenFactory(),
+                    coordinatorFactory: CoordinatorFactory(),
+                    managerFactory: ManagerFactory()
+                )
+            )
+    }
+}

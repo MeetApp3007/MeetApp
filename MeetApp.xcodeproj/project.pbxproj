@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8D709F532A037ACD00085531 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F522A037ACD00085531 /* ScreenFactory.swift */; };
 		8D709F592A05F80F00085531 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F582A05F80F00085531 /* AuthManager.swift */; };
-		8D709F5C2A06338C00085531 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D709F5B2A06338C00085531 /* View+.swift */; };
 		8D9A011A2A15E6A400D229FF /* AppCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A01192A15E6A400D229FF /* AppCoordinatorView.swift */; };
 		8D9A011C2A15E6C100D229FF /* AppCoordinatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A011B2A15E6C100D229FF /* AppCoordinatorObject.swift */; };
 		8DB1B3E329F9ED59002CC2C5 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */; };
@@ -23,13 +22,11 @@
 		8DB1B3F529FA457B002CC2C5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F429FA457B002CC2C5 /* MainViewModel.swift */; };
 		8DB1B3F729FA4585002CC2C5 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F629FA4585002CC2C5 /* MapViewModel.swift */; };
 		8DB1B3F929FA459D002CC2C5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3F829FA459D002CC2C5 /* ProfileViewModel.swift */; };
-		8DB1B3FC29FA7D84002CC2C5 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3FB29FA7D84002CC2C5 /* TabBarView.swift */; };
 		8DB1B3FE29FA7E45002CC2C5 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3FD29FA7E45002CC2C5 /* OnboardingCoordinator.swift */; };
 		8DB1B40029FA7E5A002CC2C5 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B3FF29FA7E5A002CC2C5 /* AuthCoordinator.swift */; };
 		8DB1B40229FA7E82002CC2C5 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40129FA7E82002CC2C5 /* MainCoordinator.swift */; };
 		8DB1B40429FA7EA1002CC2C5 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40329FA7EA1002CC2C5 /* MapCoordinator.swift */; };
 		8DB1B40629FA7EB4002CC2C5 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40529FA7EB4002CC2C5 /* ProfileCoordinator.swift */; };
-		8DB1B40829FA8920002CC2C5 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40729FA8920002CC2C5 /* TabBarViewModel.swift */; };
 		8DB1B40A29FA8936002CC2C5 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1B40929FA8936002CC2C5 /* TabBarCoordinator.swift */; };
 		8DBAEA8929F85E780052442B /* MeetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAEA8829F85E780052442B /* MeetAppApp.swift */; };
 		8DBAEA8D29F85E7A0052442B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBAEA8C29F85E7A0052442B /* Assets.xcassets */; };
@@ -40,14 +37,17 @@
 		8DBC7F442A2AC542005C4440 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F432A2AC542005C4440 /* RegisterView.swift */; };
 		8DBC7F472A2ACA36005C4440 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F462A2ACA36005C4440 /* RegisterViewModel.swift */; };
 		8DBC7F4A2A2CA857005C4440 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F492A2CA857005C4440 /* CoordinatorFactory.swift */; };
-		8DBC7F4C2A2CE0FF005C4440 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F4B2A2CE0FF005C4440 /* Coordinator.swift */; };
 		8DBC7F4E2A2CEA20005C4440 /* ManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F4D2A2CEA20005C4440 /* ManagerFactory.swift */; };
+		8DBC7F502A30A594005C4440 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F4F2A30A594005C4440 /* TabItem.swift */; };
+		8DBC7F522A30CEA9005C4440 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F512A30CEA9005C4440 /* Coordinator.swift */; };
+		8DBC7F562A314080005C4440 /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F552A314080005C4440 /* MainCoordinatorView.swift */; };
+		8DBC7F582A3140A1005C4440 /* MapCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F572A3140A1005C4440 /* MapCoordinatorView.swift */; };
+		8DBC7F5A2A3140C2005C4440 /* ProfileCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBC7F592A3140C2005C4440 /* ProfileCoordinatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D709F522A037ACD00085531 /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
 		8D709F582A05F80F00085531 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		8D709F5B2A06338C00085531 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		8D9A01192A15E6A400D229FF /* AppCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorView.swift; sourceTree = "<group>"; };
 		8D9A011B2A15E6C100D229FF /* AppCoordinatorObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorObject.swift; sourceTree = "<group>"; };
 		8DB1B3E229F9ED59002CC2C5 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
@@ -61,13 +61,11 @@
 		8DB1B3F429FA457B002CC2C5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		8DB1B3F629FA4585002CC2C5 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		8DB1B3F829FA459D002CC2C5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		8DB1B3FB29FA7D84002CC2C5 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		8DB1B3FD29FA7E45002CC2C5 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		8DB1B3FF29FA7E5A002CC2C5 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		8DB1B40129FA7E82002CC2C5 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		8DB1B40329FA7EA1002CC2C5 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		8DB1B40529FA7EB4002CC2C5 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
-		8DB1B40729FA8920002CC2C5 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		8DB1B40929FA8936002CC2C5 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		8DBAEA8529F85E780052442B /* MeetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBAEA8829F85E780052442B /* MeetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetAppApp.swift; sourceTree = "<group>"; };
@@ -79,8 +77,12 @@
 		8DBC7F432A2AC542005C4440 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8DBC7F462A2ACA36005C4440 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		8DBC7F492A2CA857005C4440 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
-		8DBC7F4B2A2CE0FF005C4440 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8DBC7F4D2A2CEA20005C4440 /* ManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerFactory.swift; sourceTree = "<group>"; };
+		8DBC7F4F2A30A594005C4440 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		8DBC7F512A30CEA9005C4440 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8DBC7F552A314080005C4440 /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
+		8DBC7F572A3140A1005C4440 /* MapCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinatorView.swift; sourceTree = "<group>"; };
+		8DBC7F592A3140C2005C4440 /* ProfileCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		8D709F462A02ED8F00085531 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8DBC7F552A314080005C4440 /* MainCoordinatorView.swift */,
 				8DB1B40129FA7E82002CC2C5 /* MainCoordinator.swift */,
 			);
 			path = DomainLayer;
@@ -165,6 +168,7 @@
 		8D709F482A02F73E00085531 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8DBC7F572A3140A1005C4440 /* MapCoordinatorView.swift */,
 				8DB1B40329FA7EA1002CC2C5 /* MapCoordinator.swift */,
 			);
 			path = DomainLayer;
@@ -180,6 +184,7 @@
 		8D709F4A2A02FC1600085531 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				8DBC7F592A3140C2005C4440 /* ProfileCoordinatorView.swift */,
 				8DB1B40529FA7EB4002CC2C5 /* ProfileCoordinator.swift */,
 			);
 			path = DomainLayer;
@@ -190,24 +195,6 @@
 			children = (
 			);
 			path = DataLayer;
-			sourceTree = "<group>";
-		};
-		8D709F4C2A02FDF200085531 /* PresentationLayer */ = {
-			isa = PBXGroup;
-			children = (
-				8DB1B3FB29FA7D84002CC2C5 /* TabBarView.swift */,
-				8DB1B40729FA8920002CC2C5 /* TabBarViewModel.swift */,
-			);
-			path = PresentationLayer;
-			sourceTree = "<group>";
-		};
-		8D709F4D2A02FE4F00085531 /* DomainLayer */ = {
-			isa = PBXGroup;
-			children = (
-				8DB1B40929FA8936002CC2C5 /* TabBarCoordinator.swift */,
-				8DBC7F412A2AB621005C4440 /* TabBarCoordinatorView.swift */,
-			);
-			path = DomainLayer;
 			sourceTree = "<group>";
 		};
 		8D709F4F2A02FE8900085531 /* PresentationLayer */ = {
@@ -236,20 +223,11 @@
 			path = DataLayer;
 			sourceTree = "<group>";
 		};
-		8D709F5A2A06336500085531 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8D709F5B2A06338C00085531 /* View+.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		8DB1B3D229F9BA3A002CC2C5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				8DBC7F4B2A2CE0FF005C4440 /* Coordinator.swift */,
-				8D709F5A2A06336500085531 /* Extensions */,
 				8DB1B3E129F9ED22002CC2C5 /* Factories */,
+				8DBC7F512A30CEA9005C4440 /* Coordinator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -317,13 +295,6 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		8DB1B3E029F9E4CB002CC2C5 /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SubViews;
-			sourceTree = "<group>";
-		};
 		8DB1B3E129F9ED22002CC2C5 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,8 +308,9 @@
 		8DB1B3FA29FA7D64002CC2C5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				8D709F4C2A02FDF200085531 /* PresentationLayer */,
-				8D709F4D2A02FE4F00085531 /* DomainLayer */,
+				8DBC7F412A2AB621005C4440 /* TabBarCoordinatorView.swift */,
+				8DB1B40929FA8936002CC2C5 /* TabBarCoordinator.swift */,
+				8DBC7F4F2A30A594005C4440 /* TabItem.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -367,7 +339,6 @@
 				8D9A011B2A15E6C100D229FF /* AppCoordinatorObject.swift */,
 				8DB1B3D229F9BA3A002CC2C5 /* Common */,
 				8DB1B3D829F9E373002CC2C5 /* Flows */,
-				8DB1B3E029F9E4CB002CC2C5 /* SubViews */,
 				8DBAEA8E29F85E7A0052442B /* Preview Content */,
 				8DBAEA8C29F85E7A0052442B /* Assets.xcassets */,
 			);
@@ -474,20 +445,20 @@
 				8DBC7F472A2ACA36005C4440 /* RegisterViewModel.swift in Sources */,
 				8DB1B40629FA7EB4002CC2C5 /* ProfileCoordinator.swift in Sources */,
 				8D9A011A2A15E6A400D229FF /* AppCoordinatorView.swift in Sources */,
+				8DBC7F582A3140A1005C4440 /* MapCoordinatorView.swift in Sources */,
 				8DB1B3EB29FA4529002CC2C5 /* MainView.swift in Sources */,
 				8DBC7F3E2A2AB5AD005C4440 /* OnboardinCoordinatorView.swift in Sources */,
-				8DB1B3FC29FA7D84002CC2C5 /* TabBarView.swift in Sources */,
 				8DB1B40A29FA8936002CC2C5 /* TabBarCoordinator.swift in Sources */,
 				8DB1B3EF29FA453E002CC2C5 /* ProfileView.swift in Sources */,
 				8DBC7F442A2AC542005C4440 /* RegisterView.swift in Sources */,
 				8DB1B3F529FA457B002CC2C5 /* MainViewModel.swift in Sources */,
-				8D709F5C2A06338C00085531 /* View+.swift in Sources */,
 				8DB1B3E329F9ED59002CC2C5 /* OnboardingManager.swift in Sources */,
 				8DB1B3E729FA44CC002CC2C5 /* OnboardingView.swift in Sources */,
 				8D709F592A05F80F00085531 /* AuthManager.swift in Sources */,
+				8DBC7F502A30A594005C4440 /* TabItem.swift in Sources */,
 				8DBAEA8929F85E780052442B /* MeetAppApp.swift in Sources */,
-				8DBC7F4C2A2CE0FF005C4440 /* Coordinator.swift in Sources */,
 				8DB1B3F929FA459D002CC2C5 /* ProfileViewModel.swift in Sources */,
+				8DBC7F522A30CEA9005C4440 /* Coordinator.swift in Sources */,
 				8DB1B3F329FA456C002CC2C5 /* LoginViewModel.swift in Sources */,
 				8D9A011C2A15E6C100D229FF /* AppCoordinatorObject.swift in Sources */,
 				8DBC7F422A2AB621005C4440 /* TabBarCoordinatorView.swift in Sources */,
@@ -496,9 +467,10 @@
 				8DB1B3F729FA4585002CC2C5 /* MapViewModel.swift in Sources */,
 				8DB1B40229FA7E82002CC2C5 /* MainCoordinator.swift in Sources */,
 				8DB1B3ED29FA4533002CC2C5 /* MapView.swift in Sources */,
+				8DBC7F562A314080005C4440 /* MainCoordinatorView.swift in Sources */,
 				8DBC7F402A2AB5CE005C4440 /* AuthCoordinatorView .swift in Sources */,
 				8DB1B40029FA7E5A002CC2C5 /* AuthCoordinator.swift in Sources */,
-				8DB1B40829FA8920002CC2C5 /* TabBarViewModel.swift in Sources */,
+				8DBC7F5A2A3140C2005C4440 /* ProfileCoordinatorView.swift in Sources */,
 				8DBC7F4E2A2CEA20005C4440 /* ManagerFactory.swift in Sources */,
 				8D709F532A037ACD00085531 /* ScreenFactory.swift in Sources */,
 				8DB1B3FE29FA7E45002CC2C5 /* OnboardingCoordinator.swift in Sources */,

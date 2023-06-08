@@ -6,82 +6,63 @@
 //
 
 import SwiftUI
-/// Протокол фабрики сцен
+/// Интерфейс фабрики сцен
 protocol ScreenFactoryProtocol {
-    @ViewBuilder
-    func makeOnBoarding(coordinator: OnBoardingCoordinator) -> AnyView
-    @ViewBuilder
+    /// Создание экрана онбординга
+    func makeOnBoarding() -> (AnyView, OnboardingScreenOutput)
+    /// Создание экрана регистраци
     func makeRegisterView() -> (AnyView, RegisterScreenOutput)
-    @ViewBuilder
+    /// Создание экрана авторизации
     func makeLoginView() -> (AnyView, LoginScreenOutput)
-    @ViewBuilder
-    func makeTabBarView(coordinator: TabBarCoordinator) ->  AnyView
-    @ViewBuilder
-    func makeMainView(coordinator: MainCoordinator) ->  AnyView
-    @ViewBuilder
-    func makeMapView(coordinator: MapCoordinator) ->  AnyView
-    @ViewBuilder
-    func makeProfileView(coordinator: ProfileCoordinator) ->  AnyView
+    /// Создание главного экрана
+    func makeMainView() ->  (AnyView, MainScreenOutput)
+    /// Создание экрана карты
+    func makeMapView() ->  (AnyView, MapScreenOutput)
+    /// Создание экрана профиля
+    func makeProfileView() ->  (AnyView, ProfileScreenOutput)
 }
 
 /// Фабрика сцен
 final class ScreenFactory {}
 
-
+// MARK: extension ScreenFactoryProtocol
 extension ScreenFactory: ScreenFactoryProtocol {
-    
+    // MARK: Methods
+    /// Создание экрана онбординга
+    func makeOnBoarding() -> (AnyView, OnboardingScreenOutput) {
+        let viewModel = OnboardingViewModel()
+        let view = OnboardingView().environmentObject(viewModel)
+        return (AnyView(view), viewModel)
+    }
+    /// Создание экрана регистраци
     func makeRegisterView() -> (AnyView, RegisterScreenOutput) {
         let viewModel = RegisterViewModel()
         let view = RegisterView().environmentObject(viewModel)
         return (AnyView(view), viewModel)
     }
-    
+    /// Создание экрана авторизации
     func makeLoginView() -> (AnyView, LoginScreenOutput) {
         let viewModel = LoginViewModel()
         let view = LoginView().environmentObject(viewModel)
         return (AnyView(view), viewModel)
     }
-   
-    /// Создание сцен
-    @ViewBuilder
-    func makeOnBoarding(coordinator: OnBoardingCoordinator) -> AnyView {
-        let viewModel = OnboardingViewModel(coordinator: coordinator)
-        let view = OnboardingView().environmentObject(viewModel)
-        AnyView(view)
-    }
-
-    
-
-    
-    @ViewBuilder
-    func makeTabBarView(coordinator: TabBarCoordinator) ->  AnyView {
-        let viewModel = TabBarViewModel(coordinator: coordinator)
-        let view = TabBarView().environmentObject(viewModel)
-        AnyView(view)
-    }
-    
-    @ViewBuilder
-    func makeMainView(coordinator: MainCoordinator) ->  AnyView {
+    /// Создание главного экрана
+    func makeMainView() ->  (AnyView, MainScreenOutput) {
         let viewModel = MainViewModel()
         let view = MainView().environmentObject(viewModel)
-        AnyView(view)
+        return (AnyView(view), viewModel)
     }
-    
-    @ViewBuilder
-    func makeMapView(coordinator: MapCoordinator) ->  AnyView {
+    /// Создание экрана карты
+    func makeMapView() ->  (AnyView, MapScreenOutput) {
         let viewModel = MapViewModel()
         let view = MapView().environmentObject(viewModel)
-        AnyView(view)
+        return (AnyView(view), viewModel)
     }
-    
-    @ViewBuilder
-    func makeProfileView(coordinator: ProfileCoordinator) ->  AnyView {
+    /// Создание экрана профиля
+    func makeProfileView() ->  (AnyView, ProfileScreenOutput) {
         let viewModel = ProfileViewModel()
         let view = ProfileView().environmentObject(viewModel)
-        AnyView(view)
+        return (AnyView(view), viewModel)
     }
     
 }
-
-
-

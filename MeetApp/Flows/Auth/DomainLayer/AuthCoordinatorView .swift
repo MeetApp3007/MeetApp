@@ -7,29 +7,27 @@
 
 import SwiftUI
 
-struct AuthCoordinatorView: View {
-    
+struct AuthCoordinatorView: View, CoordinatorView {
+    // MARK: Properties
+    /// Подписка на координатор
     @EnvironmentObject var coordinator: AuthCoordinator
-    
+    // MARK: Body
     var body: some View {
         start()
     }
-    
-    
+    // MARK: Methods
+    /// Запуск координатора
     func start() -> some View {
         NavigationStack(path: $coordinator.path) {
-            coordinator.performFlow(page: .login)
+            coordinator.performFlow(flow: .login)
                 .navigationDestination(for: AuthPage.self, destination: { page in
-                    coordinator.performFlow(page: page)
+                    coordinator.performFlow(flow: page)
                 })
                 .fullScreenCover(item: $coordinator.flow) { page in
-                    coordinator.performFlow(page: page)
+                    coordinator.performFlow(flow: page)
                 }
-            
         }
-        
     }
-    
 }
 
 struct AuthCoordinatorView__Previews: PreviewProvider {

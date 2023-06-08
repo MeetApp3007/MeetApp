@@ -6,7 +6,16 @@
 //
 
 import Foundation
-
-class MapViewModel: ObservableObject {
+/// Интерфейс вывода экрана карты
+protocol MapScreenOutput {
     
+}
+
+class MapViewModel: ObservableObject, MapScreenOutput {
+    // MARK: Properties
+    
+    // MARK: Init
+    init() {}
+    
+    // MARK: Methods
 }

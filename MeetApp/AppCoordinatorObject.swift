@@ -8,6 +8,8 @@
 import SwiftUI
 import Combine
 
+// MARK: Flows
+/// Флоу координатора приложения
 enum Flow: String, Identifiable {
     case onboarding, auth, tabBar
     
@@ -16,22 +18,23 @@ enum Flow: String, Identifiable {
     }
 }
 
-class AppCoordinatorObject: ObservableObject, Coordinator {
-    
+final class AppCoordinatorObject: ObservableObject, Coordinator {
+    // MARK: Properties
+    ///навигация
     @Published var path = NavigationPath()
-    //@Published var flow: Flow?
+    @Published var flow: Flow?
     
-    // кто убил? //MARK: Managers
+    /// менеджеры
     private var onboardingManager: OnboardingManagerProtocol
     private var authManager: AuthManagerProtocol
     
-    //MARK: Factories
+    /// фабрики
     private var screenFactory: ScreenFactoryProtocol
     private var coordinatorFactory: CoordinatorFactoryProtocol
-        
+    /// combine
     private var cancellables = Set<AnyCancellable>()
     
-    //MARK: - Init
+    // MARK: Init
     init(screenFactory: ScreenFactoryProtocol, coordinatorFactory: CoordinatorFactoryProtocol, managerFactory: ManagerFactoryProtocol) {
         self.screenFactory = screenFactory
         self.coordinatorFactory = coordinatorFactory
@@ -39,6 +42,8 @@ class AppCoordinatorObject: ObservableObject, Coordinator {
         self.onboardingManager = managerFactory.makeOnboardingManager()
     }
     
+    // MARK: Methods
+    ///Методы навигации
     func push(_ page: Flow) {
         path.append(page)
     }
@@ -50,7 +55,7 @@ class AppCoordinatorObject: ObservableObject, Coordinator {
     func popToRoot() {
         path.removeLast(path.count)
     }
-    
+    ///Определение Флоу
     func start() -> Flow {
         if onboardingManager.checkOnboarding() && authManager.isUserRegistered() {
             return performTabBar()
@@ -61,23 +66,25 @@ class AppCoordinatorObject: ObservableObject, Coordinator {
         }
     }
     
-    
+    /// Запуск Флоу
+    /// - Parameters:
+    ///     - flow: Представление
     @ViewBuilder
     func performFlow(flow: Flow) -> some View {
         
         switch flow {
         case .onboarding:
-            self.coordinatorFactory.makeOnboardingCoordinator(factory: self.screenFactory,
-                                                              manager: self.onboardingManager)
+            self.coordinatorFactory.makeOnboardingCoordinator(screenFactory: self.screenFactory,
+                                                              onboardingManager: self.onboardingManager)
         case .auth:
-            self.coordinatorFactory.makeAuthCoordinator(factory: self.screenFactory,
-                                                        manager: self.authManager)
+            self.coordinatorFactory.makeAuthCoordinator(screenFactory: self.screenFactory,
+                                                        authManager: self.authManager)
         case .tabBar:
-            self.coordinatorFactory.makeTabBarCoordinator(factory: screenFactory)
+            self.coordinatorFactory.makeTabBarCoordinator(screenFactory: screenFactory, coordinatorFactory: coordinatorFactory)
         }
     }
     
-    
+    /// Запуск Онбординга
     func performOnboarding() -> Flow {
         self.onboardingManager.isCompleted
             .sink { [weak self] isCompleted in
@@ -89,7 +96,7 @@ class AppCoordinatorObject: ObservableObject, Coordinator {
         return .onboarding
     }
     
-    
+    /// Запуск Авторизации
     func performAuth() -> Flow {
         
         self.authManager.isCompleted
@@ -103,9 +110,8 @@ class AppCoordinatorObject: ObservableObject, Coordinator {
         return .auth
     }
     
-    
+    /// Запуск ТабБара
     func performTabBar() -> Flow {
-        
         return .tabBar
     }
 }

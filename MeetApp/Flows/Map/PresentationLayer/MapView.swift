@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct MapView: View {
-    
+    // MARK: Properties
+    /// вьюМодель
     @EnvironmentObject var viewModel: MapViewModel
     
+    // MARK: Body
     var body: some View {
-        Text("Map")
+        Text("Map View")
+            .font(.system(size: 24, weight: .semibold, design: .rounded))
     }
 }
 

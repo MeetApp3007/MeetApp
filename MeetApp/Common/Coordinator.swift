@@ -2,13 +2,12 @@
 //  Coordinator.swift
 //  MeetApp
 //
-//  Created by Николай Чунихин on 04.06.2023.
+//  Created by Николай Чунихин on 07.06.2023.
 //
-
+/// Интерфейс Координатора
 protocol Coordinator {
-    
+    func pop()
+    func popToRoot()
 }
-
-protocol CoordinatorView {
-    
-}
+/// Интерфейс представления координатора
+protocol CoordinatorView {}

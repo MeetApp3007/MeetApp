@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct RegisterView: View {
-    
+    // MARK: Properties
+    /// вьюМодель
     @EnvironmentObject var viewModel: RegisterViewModel
     
+    // MARK: Body
     var body: some View {
         VStack {
             
