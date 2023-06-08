@@ -15,7 +15,13 @@ struct MainView: View {
     // MARK: Body
     var body: some View {
         Text("Main View")
-            .font(.system(size: 24, weight: .semibold, design: .rounded))
+            .font(
+                .system(
+                    size: 24,
+                    weight: .semibold,
+                    design: .rounded
+                )
+            )
     }
 }
 

@@ -28,7 +28,11 @@ struct RegisterView: View {
                 viewModel.roadToLoginScreen()
             } label: {
                 Text("Login View")
-                    .font(.system(size: 24))
+                    .font(
+                        .system(
+                            size: 24
+                        )
+                    )
             }
             .buttonStyle(.bordered)
             
@@ -36,7 +40,11 @@ struct RegisterView: View {
                 viewModel.register()
             } label: {
                 Text("Зарегистрироваться")
-                    .font(.system(size: 24))
+                    .font(
+                        .system(
+                            size: 24
+                        )
+                    )
             }
             .buttonStyle(.borderedProminent)
             

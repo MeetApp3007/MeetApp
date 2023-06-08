@@ -19,7 +19,13 @@ struct OnboardingView: View {
             Spacer()
             
             Text("OnBoarding")
-                .font(.system(size: 32, weight: .heavy, design: .rounded))
+                .font(
+                    .system(
+                        size: 32,
+                        weight: .heavy,
+                        design: .rounded
+                    )
+                )
                 .foregroundColor(.green)
             Spacer()
             
@@ -27,7 +33,13 @@ struct OnboardingView: View {
                 viewModel.completeOnboarding()
             } label: {
                 Text("Пройти онбординг")
-                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    .font(
+                        .system(
+                            size: 24,
+                            weight: .semibold,
+                            design: .rounded
+                        )
+                    )
             }
             .buttonStyle(.borderedProminent)
             Spacer()

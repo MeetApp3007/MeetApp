@@ -15,7 +15,13 @@ struct MapView: View {
     // MARK: Body
     var body: some View {
         Text("Map View")
-            .font(.system(size: 24, weight: .semibold, design: .rounded))
+            .font(
+                .system(
+                    size: 24,
+                    weight: .semibold,
+                    design: .rounded
+                )
+            )
     }
 }
 

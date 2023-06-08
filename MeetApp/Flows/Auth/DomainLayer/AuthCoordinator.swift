@@ -28,7 +28,10 @@ final class AuthCoordinator: ObservableObject, Coordinator {
     
     
     //MARK: Init
-    init(screenFactory: ScreenFactoryProtocol, authManager: AuthManagerProtocol) {
+    init(
+        screenFactory: ScreenFactoryProtocol,
+        authManager: AuthManagerProtocol
+    ) {
         self.screenFactory = screenFactory
         self.authManager = authManager
     }

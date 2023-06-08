@@ -7,7 +7,7 @@
 
 import Foundation
 /// Модель таба
-struct TabItem: Hashable {
+struct TabItem: Hashable, Equatable {
     // MARK: Properties
     let imageName: String
     let title: String

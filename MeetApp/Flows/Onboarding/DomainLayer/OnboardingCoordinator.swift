@@ -27,7 +27,10 @@ final class OnBoardingCoordinator: ObservableObject, Coordinator {
     private let screenFactory: ScreenFactoryProtocol
     
     // MARK: Init
-    init(screenFactory: ScreenFactoryProtocol, onboardingManager: OnboardingManagerProtocol) {
+    init(
+        screenFactory: ScreenFactoryProtocol,
+        onboardingManager: OnboardingManagerProtocol
+    ) {
         self.screenFactory = screenFactory
         self.onboardingManager = onboardingManager
     }

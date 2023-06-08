@@ -26,7 +26,9 @@ final class ProfileCoordinator: ObservableObject, Coordinator {
     let screenFactory: ScreenFactoryProtocol
     
     // MARK: Init
-    init(screenFactory: ScreenFactoryProtocol) {
+    init(
+        screenFactory: ScreenFactoryProtocol
+    ) {
         self.screenFactory = screenFactory
     }
     

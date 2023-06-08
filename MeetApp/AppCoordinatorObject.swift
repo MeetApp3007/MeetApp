@@ -23,11 +23,9 @@ final class AppCoordinatorObject: ObservableObject, Coordinator {
     ///навигация
     @Published var path = NavigationPath()
     @Published var flow: Flow?
-    
     /// менеджеры
     private var onboardingManager: OnboardingManagerProtocol
     private var authManager: AuthManagerProtocol
-    
     /// фабрики
     private var screenFactory: ScreenFactoryProtocol
     private var coordinatorFactory: CoordinatorFactoryProtocol
@@ -35,7 +33,11 @@ final class AppCoordinatorObject: ObservableObject, Coordinator {
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: Init
-    init(screenFactory: ScreenFactoryProtocol, coordinatorFactory: CoordinatorFactoryProtocol, managerFactory: ManagerFactoryProtocol) {
+    init(
+        screenFactory: ScreenFactoryProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        managerFactory: ManagerFactoryProtocol
+    ) {
         self.screenFactory = screenFactory
         self.coordinatorFactory = coordinatorFactory
         self.authManager = managerFactory.makeAuthManager()
@@ -80,7 +82,8 @@ final class AppCoordinatorObject: ObservableObject, Coordinator {
             self.coordinatorFactory.makeAuthCoordinator(screenFactory: self.screenFactory,
                                                         authManager: self.authManager)
         case .tabBar:
-            self.coordinatorFactory.makeTabBarCoordinator(screenFactory: screenFactory, coordinatorFactory: coordinatorFactory)
+            self.coordinatorFactory.makeTabBarCoordinator(screenFactory: screenFactory,
+                                                          coordinatorFactory: coordinatorFactory)
         }
     }
     

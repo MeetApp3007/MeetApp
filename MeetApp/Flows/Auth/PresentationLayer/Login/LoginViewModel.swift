@@ -4,8 +4,8 @@
 //
 //  Created by Николай Чунихин on 27.04.2023.
 //
-
 import Foundation
+
 /// Интерфейс вывода экрана авторизации
 protocol LoginScreenOutput {
     var onLogin: () -> Void { get set }

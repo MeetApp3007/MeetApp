@@ -19,7 +19,12 @@ struct LoginView: View {
             Spacer()
             
             Text("Login")
-                .font(.system(size: 32, weight: .bold))
+                .font(
+                    .system(
+                        size: 32,
+                        weight: .bold
+                    )
+                )
                 .foregroundColor(.pink)
             
             Spacer()
@@ -28,7 +33,11 @@ struct LoginView: View {
                 viewModel.roadToRegisterScreen()
             } label: {
                 Text("Register view")
-                    .font(.system(size: 24))
+                    .font(
+                        .system(
+                            size: 24
+                        )
+                    )
             }
             .buttonStyle(.bordered)
             
@@ -36,7 +45,11 @@ struct LoginView: View {
                 viewModel.login()
             } label: {
                 Text("Войти")
-                    .font(.system(size: 24))
+                    .font(
+                        .system(
+                            size: 24
+                        )
+                    )
             }
             .buttonStyle(.borderedProminent)
 

@@ -33,7 +33,10 @@ class TabBarCoordinator: ObservableObject, Coordinator {
     private let coordinatorFactory: CoordinatorFactoryProtocol
     
     // MARK: Init
-    init(screenFactory: ScreenFactoryProtocol, coordinatorFactory: CoordinatorFactoryProtocol) {
+    init(
+        screenFactory: ScreenFactoryProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol
+    ) {
         self.screenFactory = screenFactory
         self.coordinatorFactory = coordinatorFactory
     }
